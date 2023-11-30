@@ -1,18 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-/* font-family: 'Lato', sans-serif;
-font-family: 'Merriweather', serif; */
+/* <style>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800;1,900&display=swap');
+</style> 
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Playfair Display', serif;*/
 
 :root {
     /* Fonts */
-    --title: 'Merriweather', serif;
-    --main-font: 'Lato', sans-serif;
+    --title: 'Josefin Sans', sans-serif;
+    --main-font: 'Playfair Display', serif;
     /* Colours */
     --background: #3f006a0f;
-    --blue: #0d6efd;
-    --off-white: #f6f6f6;
+    --grey: #545454;
+    --off-white: #f5f4f3;
     --white: #fff;
-    --orange: #ffbf50;
-    --black: black;
+    --yellow: #ffbd59;
+    --dark: #253439;
     --coral: #ff5757;
     /* Utils */
     --small-box-shadow: 1px -1px 7px 0 #00000061;
@@ -38,10 +40,14 @@ main {
     background-color: var(--white);
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
 /* Footer */
 footer {
     flex-shrink: 0;
-    background-color: var(--off-white);
+    background-color: var(--coral);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -52,7 +58,7 @@ footer {
 .social-icon {
     height: 2rem;
     margin: 1rem;
-    color: var(--black);
+    color: var(--off-white);
 }
 
 /* Header */
@@ -60,14 +66,36 @@ footer {
 .navbar {
     background-color: var(--coral);
     box-shadow: var(--small-box-shadow);
+    padding: 1rem;
+    display: flex;
+    font-family:'Josefin Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    align-items: center;
 }
 
-a.nav-link {
-    color: var(--black);
+a.navbar-brand {
+    margin-right: 1rem; /* Adjust margin to create space between brand and links */
 }
 
-img.logo {
-    width: 18.75rem;
+.navbar .navbar-toggler-icon {
+    border-color: var(--white);
+    border-width: 4px;
+}
+
+.navbar a.nav-link {
+    margin-right: 1rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: your-color; /* Set your desired link color */
+    color: var(--white);
+}
+
+.nav-logo {
+    height: 80px;
+    width: auto;
 }
 
 .active {
