@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* font-family: 'Lato', sans-serif;
+font-family: 'Merriweather', serif; */
+
+:root {
+    /* Fonts */
+    --title: 'Merriweather', serif;
+    --main-font: 'Lato', sans-serif;
+    /* Colours */
+    --background: #3f006a0f;
+    --blue: #0d6efd;
+    --off-white: #f6f6f6;
+    --white: #fff;
+    --orange: #ffbf50;
+    --black: black;
+    --coral: #ff5757;
+    /* Utils */
+    --small-box-shadow: 1px -1px 7px 0 #00000061;
+    --border: 1px solid #00000030;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--main-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--title);
+}
+
+main {
+    flex: 1 0 auto;
+    background-color: var(--white);
+}
+
+/* Footer */
+footer {
+    flex-shrink: 0;
+    background-color: var(--off-white);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: var(--border);
+}
+
+.social-icon {
+    height: 2rem;
+    margin: 1rem;
+    color: var(--black);
+}
+
+/* Header */
+
+.navbar {
+    background-color: var(--coral);
+    box-shadow: var(--small-box-shadow);
+}
+
+a.nav-link {
+    color: var(--black);
+}
+
+img.logo {
+    width: 18.75rem;
+}
+
+.active {
+    border-bottom: 2px solid var(--blue);
+}
+
+/* form */
+
+.form {
+    width: 100%;
+    margin: 3% auto;
+    box-shadow: var(--small-box-shadow);
+    border-radius: 5px;
+}
