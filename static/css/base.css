@@ -132,7 +132,7 @@ a.navbar-brand {
     box-shadow: var(--small-box-shadow);
     border-radius: 5px;
 }
-
+/* password restriction text on sign up page */
 #id_password1_helptext {
     text-align: left;
 }
