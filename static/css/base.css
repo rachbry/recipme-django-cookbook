@@ -136,3 +136,25 @@ a.navbar-brand {
 #id_password1_helptext {
     text-align: left;
 }
+
+/* Recipes page */
+
+.recipes {
+    text-decoration: none;
+}
+
+.recipes:hover {
+    cursor: pointer;
+}
+.recipe-card {
+    width: 18rem;
+    height: 90%;
+    margin-top: 1rem;
+}
+
+
+/* full recipe page */
+
+.recipe-pic {
+    max-height: 250px;
+}

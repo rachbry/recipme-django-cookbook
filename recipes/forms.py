@@ -2,6 +2,7 @@ from django import forms
 from djrichtextfield.widgets import RichTextWidget
 from .models import Recipe
 
+
 class RecipeForm(forms.ModelForm):
     """
     Form to create a recipe
@@ -10,10 +11,10 @@ class RecipeForm(forms.ModelForm):
         model = Recipe
         fields = ['title', 'description', 'ingredients', 'instructions', 'image', 'image_alt', 'recipe_types', 'cooking_method', 'servings', 'freezable',]
 
-        ingredients = forms.CharField(widget=RichTextWidget())
-        instructions = forms.CharField(widget=RichTextWidget())
+        # ingredients = forms.CharField(widget=RichTextWidget())
+        # instructions = forms.CharField(widget=RichTextWidget())
 
-        widget = {
+        widgets = {
             'description': forms.Textarea(attrs={'rows':5}),
         }
 
@@ -31,11 +32,13 @@ class RecipeForm(forms.ModelForm):
         }
 
         # Prepopulate the slug
-        def save(self, commit=True):
-            instance = super(RecipeForm, self), save(commit=False)
+    def save(self, commit=True):
+        instance = super(LessonForm, self).save(commit=False)
 
-            if commit:
-                instance.save()
-            
-            return instance
+        instance.slug = instance.title.lower().replace(' ', '-')
+
+        if commit:
+            instance.save()
+
+        return instance
 

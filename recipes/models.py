@@ -34,7 +34,7 @@ class Recipe(models.Model):
     """
     user = models.ForeignKey(User, related_name='recipe_owner', on_delete=models.CASCADE)
     title = models.CharField(max_length=300, null=False, blank=False)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, null=False)
     description = models.CharField(max_length=500, null=False, blank=False)
     instructions = RichTextField(max_length=10000, null=False, blank=False)
     ingredients = RichTextField(max_length=10000, null=False, blank=False)
@@ -51,8 +51,10 @@ class Recipe(models.Model):
 
     freezable = models.BooleanField(default=False)
 
+    def __str__(self):
+        return str(self.title)
+
     class Meta:
         ordering = ['-posted_date']
 
-    def __str__(self):
-        return str(self.title)
+    

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Recipe - {{recipe.title}}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-5 mb-4">
+            <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="recipe-pic">
+        </div>
+        <div class="col-md-7 mb-4">
+            <h1 class="text-center">{{recipe.title}}</h1>
+            <p class="text-center">Posted on {{recipe.posted_date}}</p>
+            <a href="#" class="btn button-action w-25">Edit</a>
+            <a href="#" class="btn button-action w-25">Delete</a>
+
+            {% if recipe.freezable %}
+
+            <p><i class="fa-solid fa-snowflake fa-xlg" style="color: #a4c3f9;"></i> suitable for freezing</p>
+            {% else %}
+            <p><i class="fa-solid fa-ban fa-xlg" style="color: #a4c3f9;"></i>not suitable for freezing</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Ingredients</h3>
+                    <p class="card-text">{{recipe.ingredients|safe}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Method</h3>
+                    <p class="card-text">{{recipe.instructions|safe}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
