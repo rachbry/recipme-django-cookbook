@@ -1,27 +1,24 @@
-{% extends "account/base_manage.html" %}
-{% load allauth i18n %}
-{% block head_title %}
-    {% trans "Sign Out" %}
-{% endblock head_title %}
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Sign out" %}{% endblock title %}
 {% block content %}
-    {% element h1 %}
-        {% trans "Sign Out" %}
-    {% endelement %}
-    <p>{% trans 'Are you sure you want to sign out?' %}</p>
-    {% url 'account_logout' as action_url %}
-    {% element form method="post" action=action_url no_visible_fields=True %}
-        {% slot body %}
-            {% csrf_token %}
-            {% if redirect_field_value %}
-                <input type="hidden"
-                       name="{{ redirect_field_name }}"
-                       value="{{ redirect_field_value }}" />
-            {% endif %}
-        {% endslot %}
-        {% slot actions %}
-            {% element button type="submit" %}
-                {% trans 'Sign Out' %}
-            {% endelement %}
-        {% endslot %}
-    {% endelement %}
-{% endblock content %}
+<div class="container text-center mt-3 offset-md-2">
+    <h2>{% trans "Sign out" %}</h2>
+    <p>
+        {% trans 'Are you sure you want to log out?' %}
+    </p>
+    <form class="p-2" method="post" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        {{ form | crispy }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+        {% endif %}
+        <button class="btn button-action mb-2" type="submit">{% trans "Sign out" %}</button>
+    </form>
+    <p>or </p>
+    <a class="btn button-action mb-2" href="javascript:history.back()">{% trans "return to previous page" %}</a>
+</div>
+
+{% endblock %}
