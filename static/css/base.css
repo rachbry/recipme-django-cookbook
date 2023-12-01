@@ -7,7 +7,7 @@ font-family: 'Playfair Display', serif;*/
 :root {
     /* Fonts */
     --title: 'Josefin Sans', sans-serif;
-    --main-font: 'Playfair Display', serif;
+    --main-font: 'Josefin Sans', sans-serif;
     /* Colours */
     --background: #3f006a0f;
     --grey: #545454;
@@ -17,8 +17,8 @@ font-family: 'Playfair Display', serif;*/
     --dark: #253439;
     --coral: #ff5757;
     /* Utils */
-    --small-box-shadow: 1px -1px 7px 0 #00000061;
-    --border: 1px solid #00000030;
+    --small-box-shadow: 1px -1px 9px 0 #00000061;
+    --border: 1px solid var(--grey);
 }
 
 html, body {
@@ -29,10 +29,15 @@ body {
     display: flex;
     flex-direction: column;
     font-family: var(--main-font);
+    color: var(--dark);
+    background-color: var(--off-white);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--title);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--grey);
 }
 
 main {
@@ -43,6 +48,23 @@ main {
 .uppercase {
     text-transform: uppercase;
 }
+/* buttons */
+
+.button-action {
+    background-color: var(--off-white);
+    border-color: var(--coral);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--coral);
+}
+.button-action:hover {
+    background-color: var(--coral);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--off-white);
+}
+
+
 
 /* Footer */
 footer {
@@ -99,7 +121,7 @@ a.navbar-brand {
 }
 
 .active {
-    border-bottom: 2px solid var(--blue);
+    border-bottom: 2px solid var(--dark);
 }
 
 /* form */
@@ -109,4 +131,8 @@ a.navbar-brand {
     margin: 3% auto;
     box-shadow: var(--small-box-shadow);
     border-radius: 5px;
+}
+
+#id_password1_helptext {
+    text-align: left;
 }
