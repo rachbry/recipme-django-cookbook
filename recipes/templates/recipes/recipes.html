@@ -6,32 +6,27 @@
 <h1>My Recipes</h1>
 
 
-<div class="container overflow-auto">
-    <div class="d-flex flex-row flex-wrap justify-content-center">
+<div class="container">
+    <a href="#" class="arrow-icon mr-3" onclick="scrollRecipes('left')">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <div class="d-flex flex-nowrap overflow-auto">
+
         {% for recipe in recipes %}
-            <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes" aria-label="Click to view {{recipe.title}}">
-                <div class="card m-3 recipe-card">
-                    <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
-                    <div class="card-body">
-                        <h2 class="card-title">{{recipe.title}}</h2>
-                    </div>
+        <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes" aria-label="Click to view {{recipe.title}}">
+            <div class="card m-3 recipe-card">
+                <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
+                <div class="card-body">
+                    <h2 class="card-title">{{recipe.title}}</h2>
                 </div>
-            </a>
+            </div>
+        </a>
         {% endfor %}
+        <a href="#" class="arrow-icon ml-3" onclick="scrollRecipes('right')">
+            <i class="fas fa-chevron-right"></i>
+        </a>
     </div>
 </div>
 
-<!-- <div class="container d-flex flex-row flex-wrap justify-content-center">
-    {% for recipe in recipes %}
-    <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes" aria-label="Click to view {{recipe.title}}">
-        <div class="card m-3 recipe-card">
-            <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
-            <div class="card-body">
-                <h2 class="card-title">{{recipe.title}}</h2>
-            </div>
-        </div>
-    </a>
-</div> -->
-<!-- {% endfor %} -->
 
 {% endblock %}
