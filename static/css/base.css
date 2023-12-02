@@ -204,12 +204,18 @@ a.navbar-brand {
     margin-top: 1rem;
 }
 
-.freeze {
-    color: #90D2FA;
-    font-size: 1.2rem;
-    width: auto;
-    padding-top: 5px;
+.control {
+    font-size: 1rem;
+    color: var(--coral);
 }
+
+.control:hover {
+    font-size: 1.5rem;
+    color: var(--coral);
+    text-decoration: none;
+}
+
+
 
 .flex-container {
     display: flex;
@@ -251,4 +257,11 @@ box-shadow: var(--small-box-shadow);
 .post-it-note {
     background-color: var(--yellow);
     box-shadow: var(--small-box-shadow);
+}
+
+.freeze {
+    color: #90D2FA;
+    font-size: 1.2rem;
+    width: auto;
+    padding-top: 5px;
 }
