@@ -22,7 +22,6 @@ class AddRecipe(LoginRequiredMixin, CreateView):
 
 
 
-
 class Recipes(ListView):
     """
     View all recipes

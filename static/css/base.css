@@ -19,6 +19,7 @@ font-family: 'Playfair Display', serif;*/
     /* Utils */
     --small-box-shadow: 1px -1px 9px 0 #00000061;
     --border: 1px solid var(--grey);
+
 }
 
 html, body {
@@ -28,12 +29,13 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
     font-family: var(--main-font);
     color: var(--dark);
     background-color: var(--off-white);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .special-text {
     font-family: var(--title);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -41,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 main {
-    flex: 1 0 auto;
+    flex: 1;
     background-color: var(--white);
 }
 
@@ -64,6 +66,56 @@ main {
     color: var(--off-white);
 }
 
+/* home page */
+/* .jumbotron {
+    background-image: url("https://res.cloudinary.com/de9lbkrcb/image/upload/v1701525668/ella-olsson-KPDbRyFOTnE-unsplash_ocpm5z.jpg");
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.jumbotron-container {
+    background-image: url("https://res.cloudinary.com/de9lbkrcb/image/upload/v1701525668/ella-olsson-KPDbRyFOTnE-unsplash_ocpm5z.jpg");
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: overlay;
+    height: 500px;
+    background-size: cover;
+    background-position: center-left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+
+.button-hero {
+
+	border-radius:6px;
+	border:1px solid var(--yellow);
+	display:inline-block;
+	cursor:pointer;
+	padding:16px 31px;
+	text-decoration:none;
+    color: var(--dark);
+    background-color: var(--yellow);
+}
+
+.button-hero:hover {
+	color:var(--yellow);
+    background-color: var(--dark);
+    border:1px solid var(--dark);
+}
+
+
+.button-hero h3 {
+    color: var(--yellow);
+}
+
+#hero-text {
+    color: var(--off-white);
+    font-weight: 500;
+}
 
 
 /* Footer */
@@ -74,7 +126,7 @@ footer {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-top: var(--border);
+    padding: 1rem;
 }
 
 .social-icon {
@@ -152,9 +204,51 @@ a.navbar-brand {
     margin-top: 1rem;
 }
 
+.freeze {
+    color: #90D2FA;
+    font-size: 1.2rem;
+    width: auto;
+    padding-top: 5px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+}
 
 /* full recipe page */
 
 .recipe-pic {
     max-height: 250px;
+}
+
+.description-container {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.description-container.expanded {
+    -webkit-line-clamp: unset; /* Show all lines when expanded */
+}
+
+.read-more-button {
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--coral);
+}
+
+.card-recipe-info {
+background-color: var(--off-white);
+box-shadow: var(--small-box-shadow);
+
+}
+
+.post-it-note {
+    background-color: var(--yellow);
+    box-shadow: var(--small-box-shadow);
 }

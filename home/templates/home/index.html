@@ -1,1 +1,47 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h1>Hello, {{request.user.username}}</h1>
+
+{% else %}
+<!-- id="hero-text" -->
+<div class="jumbotron jumbotron-fluid jumbotron-container p-5">
+    <div class="text-center">
+        <h4 class="display-4" id="hero-text">Store, discover, and create<br>with RecipMe</h4>
+        <a class="button-hero special-text m-3" href="{% url 'account_signup' %}">Sign up</a>
+    </div>
+</div>
+
+<div class="container-fluid mt-5">
+    <div class="d-flex justify-content-around">
+        <div class="flex-column p-5">
+            <h2 class="mb-4">Why Join RecipMe?</h2>
+            <p class="lead mb-4"><strong>Recipe Organization Made Easy:</strong> Store all your favorite recipes in one
+                place. Say goodbye to the chaos of scattered notes and bookmarks. Our user-friendly platform lets you
+                organize recipes effortlessly.</p>
+            <p class="lead mb-4"><strong>Be your own chef!</strong> Craft and customize your recipes with our intuitive recipe editor.
+                Share your culinary masterpieces with friends and family, or keep them private for your eyes only.</p>
+            <p class="lead mb-4"><strong>Access Anywhere, Anytime:</strong> Have your recipes at your fingertips,
+                whether you're in the kitchen or planning your next grocery run. Our platform is accessible from any
+                device, ensuring convenience and flexibility.</p>
+            <p class="lead mb-4"><strong>Stay Inspired:</strong> Beat the kitchen blues with a constant stream of
+                culinary inspiration. From trending recipes to seasonal delights, RecipMe keeps you motivated to try new
+                dishes and techniques.</p>
+        </div>
+        <div class="flex-column p-5">
+            <h2 class="mb-4">How to Get Started:</h2>
+            <p class="lead mb-4"><strong>Sign Up for Free:</strong> Creating your RecipMe account is quick, easy, and absolutely free!
+                Simply sign up and start exploring the world of culinary possibilities.</p>
+            <p class="lead mb-4"><strong>Build Your Recipe Collection:</strong> Add your favorite recipes, or experiment with new ones
+                using our intuitive recipe editor. Your personalized recipe hub is just a few clicks away.</p>
+        </div>
+    </div>
+</div>
+
+
+
+{% endif %}
+{% endblock %}

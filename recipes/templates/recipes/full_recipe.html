@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Recipe - {{recipe.title}}{% endblock %}
 
@@ -9,23 +10,33 @@
             <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="recipe-pic">
         </div>
         <div class="col-md-7 mb-4">
-            <h1 class="text-center">{{recipe.title}}</h1>
+            <h1 class="">{{recipe.title}}</h1>
             <p class="text-center">Posted on {{recipe.posted_date}}</p>
-            <a href="#" class="btn button-action w-25">Edit</a>
-            <a href="#" class="btn button-action w-25">Delete</a>
-
-            {% if recipe.freezable %}
-
-            <p><i class="fa-solid fa-snowflake fa-xlg" style="color: #a4c3f9;"></i> suitable for freezing</p>
-            {% else %}
-            <p><i class="fa-solid fa-ban fa-xlg" style="color: #a4c3f9;"></i>not suitable for freezing</p>
-            {% endif %}
+            <div id="recipeDescriptionContainer" class="description-container">
+                <p class="card-text" id="recipeDescription">
+                    {{recipe.description}}
+                </p>
+            </div>
+            <button onclick="toggleDescription()" class="read-more-button">Read More</button>
+            <hr>
+            <div class="flex-container">
+                {% if recipe.freezable %}
+                <p><i class="fa-solid fa-snowflake freeze"></i> suitable for freezing</p>
+                {% else %}
+                <p><i class="fa-solid fa-ban fa-xlg freeze"></i>not suitable for freezing</p>
+                {% endif %}
+                <p>servings: {{recipe.servings}}</p>
+            </div>
+            <div class="container recipe-button">
+                <a href="#" class="btn button-action w-25 mx-5">Edit</a>
+                <a href="#" class="btn button-action w-25 mx-5">Delete</a>
+            </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-4 mb-4">
-            <div class="card">
+            <div class="card card-recipe-info">
                 <div class="card-body">
                     <h3 class="card-title">Ingredients</h3>
                     <p class="card-text">{{recipe.ingredients|safe}}</p>
@@ -33,7 +44,7 @@
             </div>
         </div>
         <div class="col-md-8 mb-4">
-            <div class="card">
+            <div class="card card-recipe-info">
                 <div class="card-body">
                     <h3 class="card-title">Method</h3>
                     <p class="card-text">{{recipe.instructions|safe}}</p>
@@ -41,5 +52,16 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="card post-it-note">
+            <h4 class="card-title">Notes</h4>
+                    <p class="card-text"></p>
+        </div>
+
+    </div>
 </div>
+{% endblock %}
+
+{% block onload_js %}
+<script src="{% static 'js/base.js' %}"></script>
 {% endblock %}

@@ -33,7 +33,7 @@ class RecipeForm(forms.ModelForm):
 
         # Prepopulate the slug
     def save(self, commit=True):
-        instance = super(LessonForm, self).save(commit=False)
+        instance = super(RecipeForm, self).save(commit=False)
 
         instance.slug = instance.title.lower().replace(' ', '-')
 

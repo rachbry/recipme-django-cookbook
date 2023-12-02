@@ -21,11 +21,11 @@
             <li class="nav-item">
                 <a class="nav-link {% if url_name == 'recipes' %}active{% endif %}" href="{% url 'recipes' %}">Recipes</a>
             </li>
+            <!-- login or out -->
+            {% if user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link {% if request.path == '/recipes/add-recipe' %}active{% endif %}" href="{% url 'add_recipe' %}">Add Recipe</a>
             </li>
-            <!-- login or out -->
-            {% if user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
                     href="{% url 'account_logout' %}">Logout</a>
