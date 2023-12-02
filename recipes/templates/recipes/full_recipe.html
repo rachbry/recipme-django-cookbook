@@ -28,8 +28,8 @@
                 <p>servings: {{recipe.servings}}</p>
             </div>
             <div class="container recipe-button">
-                <a href="#" class="btn button-action w-25 mx-5">Edit</a>
-                <a href="#" class="btn button-action w-25 mx-5">Delete</a>
+                <a href="{% url 'edit_recipe' recipe.id %}" class="btn button-action w-25 mx-5">Edit</a>
+                <a href="{% url 'delete_recipe' recipe.id %}" class="btn button-action w-25 mx-5">Delete</a>
             </div>
         </div>
     </div>
