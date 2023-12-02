@@ -181,9 +181,10 @@ a.navbar-brand {
 .form {
     width: 100%;
     margin: 3% auto;
-    box-shadow: var(--small-box-shadow);
-    border-radius: 5px;
+    /* background-color: var(--off-white); */
+    border-radius: 10px;
 }
+
 /* password restriction text on sign up page */
 #id_password1_helptext {
     text-align: left;

@@ -7,6 +7,16 @@
     <form method="post" enctype="multipart/form-data" class="p-2 form">
         <h1 class="text-center">Add Recipe</h1>
         {% csrf_token %}
+
+        <!-- Display success message -->
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
         {{ form.media }}
         {{ form| crispy }}
         <div class="text-center">

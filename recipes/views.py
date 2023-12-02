@@ -7,11 +7,13 @@ from django.contrib.auth.mixins import(
     UserPassesTestMixin, LoginRequiredMixin
 )
 
+from django.contrib.messages.views import SuccessMessageMixin
+
 from .models import Recipe
 from .forms import RecipeForm
 
 # Create your views here.
-class AddRecipe(LoginRequiredMixin, CreateView):
+class AddRecipe(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     """
     Add recipe view
     """
@@ -19,6 +21,7 @@ class AddRecipe(LoginRequiredMixin, CreateView):
     model = Recipe
     form_class = RecipeForm
     success_url = '/recipes'
+    success_message = "Recipe added successfully!"
 
     def form_valid(self, form):
         form.instance.user = self.request.user
