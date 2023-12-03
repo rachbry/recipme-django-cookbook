@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import(
 )
 
 from django.db.models import Q
-
+from django.core.exceptions import PermissionDenied
 from django.contrib.messages.views import SuccessMessageMixin
 
 from .models import Recipe
@@ -101,7 +101,23 @@ class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     success_url = '/recipes/'
 
     def test_func(self):
-        return self.request.user == self.get_object().user
+        return self.request.user.is_authenticated and self.request.user == self.get_object().user
+
+    def handle_no_permission(self):
+        # Raise a PermissionDenied exception
+        raise PermissionDenied("You do not have permission to edit this recipe.")
+
+    def handle_exception(self, exc):
+        # Handle PermissionDenied exception and redirect to 403.html
+        if isinstance(exc, PermissionDenied):
+            messages.error(self.request, "You do not have permission to edit this recipe.")
+            return render(self.request, '403.html', status=403)
+        return HttpResponseForbidden()
+
+    def form_valid(self, form):
+        # If the form is valid, display a success message
+        messages.success(self.request, 'Recipe updated successfully!')
+        return super().form_valid(form)
 
 
 class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -113,3 +129,19 @@ class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().user
+
+    def handle_no_permission(self):
+        # Raise a PermissionDenied exception
+        raise PermissionDenied("You do not have permission to delete this recipe.")
+
+    def handle_exception(self, exc):
+        # Handle PermissionDenied exception and redirect to 403.html
+        if isinstance(exc, PermissionDenied):
+            messages.error(self.request, "You do not have permission to delete this recipe.")
+            return render(self.request, '403.html', status=403)
+        return HttpResponseForbidden()
+
+    def form_valid(self, form):
+        # If the form is valid, display a success message
+        messages.success(self.request, 'Recipe deleted successfully!')
+        return super().form_valid(form)
