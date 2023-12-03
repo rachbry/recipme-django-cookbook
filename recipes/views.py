@@ -11,6 +11,7 @@ from django.db.models import Q
 from django.core.exceptions import PermissionDenied
 from django.contrib.messages.views import SuccessMessageMixin
 
+# from utils.helpers import get_queryset_with_query
 from .models import Recipe
 from .forms import RecipeForm
 
@@ -44,13 +45,13 @@ class Recipes(ListView):
         query = self.request.GET.get('q')
         if query:
             recipes = self.model.objects.filter(
-                Q(title__icontains=query) |
-                Q(description__icontains=query) |
-                Q(instructions__icontains=query) |
-                Q(ingredients__icontains=query) |
-                Q(recipe_types__icontains=query) |
+                Q(title__icontains=query) | 
+                Q(description__icontains=query) | 
+                Q(instructions__icontains=query) | 
+                Q(ingredients__icontains=query) | 
+                Q(recipe_types__icontains=query) | 
                 Q(cooking_method__icontains=query) 
-            )
+            ) 
         else:
             recipes = self.model.objects.all()
         return recipes
@@ -58,16 +59,16 @@ class Recipes(ListView):
 
 class MyRecipes(LoginRequiredMixin, ListView):
     """
-    View personlised recipes for logged in user
+    View personalized recipes for the logged-in user
     """
     template_name = 'recipes/my_recipes.html'
     model = Recipe
     context_object_name = 'recipes'
 
-    def get_queryset(self, **kwargs):
+    def get_queryset(self):
         query = self.request.GET.get('q')
         user = self.request.user
-        
+
         if query:
             recipes = self.model.objects.filter(
                 Q(title__icontains=query) |
@@ -75,11 +76,45 @@ class MyRecipes(LoginRequiredMixin, ListView):
                 Q(instructions__icontains=query) |
                 Q(ingredients__icontains=query) |
                 Q(recipe_types__icontains=query) |
-                Q(cooking_method__icontains=query) 
+                Q(cooking_method__icontains=query)
             )
         else:
-            recipes = self.model.objects.filter(user=user)
-        return recipes
+            recipes = self.model.objects.all()
+
+        filtered_recipes = recipes.filter(Q(user=user) | Q(user__is_staff=True))
+
+        return filtered_recipes
+
+
+# class MyRecipes(LoginRequiredMixin, ListView):
+#     """
+#     View personlised recipes for logged in user
+#     """
+#     template_name = 'recipes/my_recipes.html'
+#     model = Recipe
+#     context_object_name = 'recipes'
+
+#     def get_queryset(self):
+#         query = self.request.GET.get('q')
+#         user = self.request.user
+
+#         base_query = (
+#             Q(title__icontains=query) | 
+#             Q(description__icontains=query) | 
+#             Q(instructions__icontains=query) | 
+#             Q(ingredients__icontains=query) | 
+#             Q(recipe_types__icontains=query) | 
+#             Q(cooking_method__icontains=query)
+#         )
+
+#         if query:
+#             recipes = self.model.objects.filter(base_query)
+#         else:
+#             recipes = self.model.objects.all()
+
+#         filtered_recipes = recipes.filter(Q(user=user) | Q(user__is_staff=True))
+
+#         return filtered_recipes
 
 
 class FullRecipe(DetailView):
