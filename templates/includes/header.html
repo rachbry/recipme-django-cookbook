@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark">
     <!-- logo -->
-    <a class="navbar-brand mr-auto" href="#">
+    <a class="navbar-brand mr-auto" href="{% url 'home:home' %}">
         <img src="{% static 'images/recipMe-cropped.png' %}" class="nav-logo" alt="recipeMe logo link to home">
     </a>
 
@@ -16,7 +16,7 @@
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0 uppercase">
             <li class="nav-item">
                 <a class="nav-link {% if request.path == '/' %}active{% endif %}" aria-current="page"
-                    href="{% url 'home' %}">Home</a>
+                    href="{% url 'home:home' %}">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {% if url_name == 'recipes' %}active{% endif %}"

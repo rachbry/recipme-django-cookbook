@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block title %}Recipes{% endblock %}
+
+{% block content %}
+<h1>Welcome back, {{request.user.username}}!</h1>
+
+
+<!-- Carousel for all recipes -->
+<div class="container">
+    <h2>All recipes</h2>
+    <div id="recipeCarousel" class="carousel slide" data-ride="carousel">
+        <div class="d-flex flex-nowrap overflow-auto">
+            {% for recipe in recipes %}
+            <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes" aria-label="Click to view {{recipe.title}}">
+                <div class="card m-3 recipe-card">
+                    <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
+                    <div class="card-body">
+                        <h2 class="card-title">{{recipe.title}}</h2>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+            <!-- carousel buttons -->
+        </div>
+        <div class="text-center">
+            <a href="#" class="fa-solid fa-backward fa-lg mx-3 control" onclick="scrollRecipes('left')">
+                <span class="sr-only">Previous</span>
+            </a>
+            <a href="#" class="fa-solid fa-forward fa-lg mx-3 control" onclick="scrollRecipes('right')">
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<hr class="my-5">
+
+<!-- Carousel My recipes -->
+<div class="container">
+    <h2>My Recipes</h2>
+    <div id="myRecipesCarousel" class="carousel slide" data-ride="carousel">
+        <div class="d-flex flex-nowrap overflow-auto">
+            {% for recipe in recipes %}
+            {% if recipe.user == request.user %}
+            <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes" aria-label="Click to view {{recipe.title}}">
+                <div class="card m-3 recipe-card">
+                    <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
+                    <div class="card-body">
+                        <h2 class="card-title">{{recipe.title}}</h2>
+                    </div>
+                </div>
+            </a>
+            {% endif %}
+            {% endfor %}
+            <!-- carousel buttons -->
+        </div>
+        <div class="text-center">
+            <a href="#" class="fa-solid fa-backward fa-lg mx-3 control" onclick="scrollRecipes('left')">
+                <span class="sr-only">Previous</span>
+            </a>
+            <a href="#" class="fa-solid fa-forward fa-lg mx-3 control" onclick="scrollRecipes('right')">
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<hr class="my-5">
+
+
+<!-- Carousel slow cooker recipes -->
+<div class="container">
+    <h2>Slow cooker Recipes</h2>
+    <div id="slowCookerCarousel" class="carousel slide" data-ride="carousel">
+        <div class="d-flex flex-nowrap overflow-auto">
+            {% for recipe in recipes %}
+            {% if recipe.cooking_method == 'slow cooker' %}
+            <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes" aria-label="Click to view {{recipe.title}}">
+                <div class="card m-3 recipe-card">
+                    <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
+                    <div class="card-body">
+                        <h2 class="card-title">{{recipe.title}}</h2>
+                    </div>
+                </div>
+            </a>
+            {% endif %}
+            {% endfor %}
+            <!-- carousel buttons -->
+        </div>
+        <div class="text-center">
+            <a href="#" class="fa-solid fa-backward fa-lg mx-3 control" onclick="scrollRecipes('left')">
+                <span class="sr-only">Previous</span>
+            </a>
+            <a href="#" class="fa-solid fa-forward fa-lg mx-3 control" onclick="scrollRecipes('right')">
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block onload_js %}
+
+{% endblock %}

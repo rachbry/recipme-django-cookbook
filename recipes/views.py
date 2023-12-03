@@ -56,6 +56,32 @@ class Recipes(ListView):
         return recipes
 
 
+class MyRecipes(LoginRequiredMixin, ListView):
+    """
+    View personlised recipes for logged in user
+    """
+    template_name = 'recipes/my_recipes.html'
+    model = Recipe
+    context_object_name = 'recipes'
+
+    def get_queryset(self, **kwargs):
+        query = self.request.GET.get('q')
+        user = self.request.user
+        
+        if query:
+            recipes = self.model.objects.filter(
+                Q(title__icontains=query) |
+                Q(description__icontains=query) |
+                Q(instructions__icontains=query) |
+                Q(ingredients__icontains=query) |
+                Q(recipe_types__icontains=query) |
+                Q(cooking_method__icontains=query) 
+            )
+        else:
+            recipes = self.model.objects.filter(user=user)
+        return recipes
+
+
 class FullRecipe(DetailView):
     """
     View full detail for single a recipe

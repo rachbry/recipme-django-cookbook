@@ -3,8 +3,9 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
+{% if request.user.is_authenticated %}
 <h1>Hello, {{request.user.username}}</h1>
+
 
 {% else %}
 <!-- id="hero-text" -->
