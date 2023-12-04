@@ -32,12 +32,19 @@
                 <a href="{% url 'delete_recipe' recipe.id %}" class="btn button-action w-25 mx-5">Delete</a>
 
                 <!-- favourites button -->
+                {% if request.user.is_authenticated %}
 
-                <a href="{% url 'favourite_add' recipe.id %}" class="btn button-action w-25 mx-5">Add to favourites</a>
+                    {% if fav %}
+                        <a href="{% url 'favourite_add' recipe.id %}" class="btn button-action w-25 mx-5">Remove from favourites</a>
+                    {% else %}
+                        <a href="{% url 'favourite_add' recipe.id %}" class="btn button-action w-25 mx-5">Add to favourites</a>
+                    {% endif %}
+
+                {% else %}
+                    <a href="{% url 'account_signup' recipe.id %}" class="btn button-action w-25 mx-5">Add to favourites</a>
+                {% endif %}
 
             </div>
-
-
         </div>
     </div>
 

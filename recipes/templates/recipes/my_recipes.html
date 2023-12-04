@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load messages %}
 
 {% block title %}Recipes{% endblock %}
 
@@ -6,11 +7,13 @@
 <h1>Welcome back, {{request.user.username}}!</h1>
 <a href="{% url 'favourite_list' %}">Faves</a>
 
-<!-- Carousel for all recipes -->
+
+<!-- Carousel for favourite recipes -->
 <div class="container">
     <h2>Favourite recipes</h2>
-    <div id="favouriteRecipesCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel slide" data-ride="carousel">
         <div class="d-flex flex-nowrap overflow-auto">
+            {% if user_favourite_recipes %}
             {% for recipe in user_favourite_recipes %}
 
             <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes" aria-label="Click to view {{recipe.title}}">
@@ -21,8 +24,11 @@
                     </div>
                 </div>
             </a>
-
             {% endfor %}
+            {% else %}
+            <p>You haven't added any recipes to your favorites yet.</p>
+            {% endif %}
+
             <!-- carousel buttons -->
         </div>
         <div class="text-center">
@@ -35,6 +41,7 @@
         </div>
     </div>
 </div>
+
 
 <hr class="my-5">
 

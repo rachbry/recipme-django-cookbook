@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import(
     UserPassesTestMixin, LoginRequiredMixin
 )
-
+from django.contrib import messages
 
 from django.views import View
 from django.http import HttpResponseRedirect
@@ -102,6 +102,18 @@ class FullRecipe(DetailView):
     model = Recipe
     context_object_name = 'recipe'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        recipe = context['recipe']
+
+        # Check if the current user has favorited this recipe
+        fav = recipe.favourites.filter(id=self.request.user.id).exists()
+
+        # Add the 'fav' variable to the context
+        context['fav'] = fav
+
+        return context
 
 class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
@@ -201,8 +213,10 @@ def favourite_add(request, id):
     recipe = get_object_or_404(Recipe, id=id)
     if recipe.favourites.filter(id=request.user.id).exists():
         recipe.favourites.remove(request.user)
+        messages.success(request, 'Recipe removed from favorites successfully!')
     else:
         recipe.favourites.add(request.user)
+        messages.success(request, 'Recipe added to favorites successfully!')
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
