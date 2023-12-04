@@ -7,6 +7,7 @@ from django.contrib.auth.mixins import(
     UserPassesTestMixin, LoginRequiredMixin
 )
 
+
 from django.views import View
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -194,26 +195,18 @@ class SearchResultsView(ListView):
 
         return recipes
 
-class ToggleFavouriteView(View):
-    """
-    Add or remove recipe from favourites
-    """
-    def post(self, request, *args, **kwargs):
-        recipe_id = self.kwargs['pk']
-        recipe = get_object_or_404(Recipe, pk=recipe_id)
-        recipe.is_favourite = not recipe.is_favourite
-        recipe.save()
-        return HttpResponseRedirect(reverse('full_recipe', args=[recipe_id]))
+
+@login_required
+def favourite_add(request, id):
+    recipe = get_object_or_404(Recipe, id=id)
+    if recipe.favourites.filter(id=request.user.id).exists():
+        recipe.favourites.remove(request.user)
+    else:
+        recipe.favourites.add(request.user)
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
 @login_required
-def toggle_favourite(request, pk):
-    recipe = get_object_or_404(Recipe, pk=pk)
-
-    # Check if the user has already favorited the recipe
-    if request.user in recipe.favorited_by.all():
-        recipe.favorited_by.remove(request.user)
-    else:
-        recipe.favorited_by.add(request.user)
-
-    return redirect('full_recipe', pk=pk)
+def favourite_list(request):
+    user_favourite_recipes = Recipe.objects.filter(favourites=request.user)
+    return render(request, 'recipes/favourite_recipes.html', {'user_favourite_recipes': user_favourite_recipes})

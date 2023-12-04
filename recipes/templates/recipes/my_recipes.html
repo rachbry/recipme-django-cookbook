@@ -4,15 +4,15 @@
 
 {% block content %}
 <h1>Welcome back, {{request.user.username}}!</h1>
-
+<a href="{% url 'favourite_list' %}">Faves</a>
 
 <!-- Carousel for all recipes -->
 <div class="container">
     <h2>Favourite recipes</h2>
     <div id="favouriteRecipesCarousel" class="carousel slide" data-ride="carousel">
         <div class="d-flex flex-nowrap overflow-auto">
-            {% for recipe in recipes %}
-            {% if request.user.is_authenticated and request.user in recipe.favorited_by.all %}
+            {% for recipe in user_favourite_recipes %}
+
             <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes" aria-label="Click to view {{recipe.title}}">
                 <div class="card m-3 recipe-card">
                     <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </a>
-            {% endif %}
+
             {% endfor %}
             <!-- carousel buttons -->
         </div>

@@ -30,14 +30,14 @@
             <div class="container recipe-button">
                 <a href="{% url 'edit_recipe' recipe.id %}" class="btn button-action w-25 mx-5">Edit</a>
                 <a href="{% url 'delete_recipe' recipe.id %}" class="btn button-action w-25 mx-5">Delete</a>
+
+                <!-- favourites button -->
+
+                <a href="{% url 'favourite_add' recipe.id %}" class="btn button-action w-25 mx-5">Add to favourites</a>
+
             </div>
 
-            <!-- favourite button -->
-            <form method="post" action="{% url 'toggle_favourite' recipe.pk %}">
-                {% csrf_token %}
-                <button type="submit">Toggle Favourite</button>
-            </form>
-            
+
         </div>
     </div>
 
@@ -62,7 +62,7 @@
     <div class="row">
         <div class="card post-it-note">
             <h4 class="card-title">Notes</h4>
-                    <p class="card-text"></p>
+            <p class="card-text"></p>
         </div>
 
     </div>
