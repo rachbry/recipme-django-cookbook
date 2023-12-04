@@ -152,3 +152,40 @@ class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         # If the form is valid, display a success message
         messages.success(self.request, 'Recipe deleted successfully!')
         return super().form_valid(form)
+
+
+class SearchResultsView(ListView):
+    template_name = 'recipes/search_results.html'
+    model = Recipe
+    context_object_name = 'recipes'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        user = self.request.user
+
+        if query and user.is_authenticated:
+            # Customize the queryset for authenticated users
+            recipes = Recipe.objects.filter(
+                Q(title__icontains=query) |
+                Q(description__icontains=query) |
+                Q(instructions__icontains=query) |
+                Q(ingredients__icontains=query) |
+                Q(recipe_types__icontains=query) |
+                Q(cooking_method__icontains=query),
+                Q(user=user) | Q(user__is_staff=True)
+            )
+        elif query:
+            # For non-authenticated users, show general results
+            recipes = Recipe.objects.filter(
+                Q(title__icontains=query) |
+                Q(description__icontains=query) |
+                Q(instructions__icontains=query) |
+                Q(ingredients__icontains=query) |
+                Q(recipe_types__icontains=query) |
+                Q(cooking_method__icontains=query)
+            )
+        else:
+            # No query, show all recipes
+            recipes = Recipe.objects.all()
+
+        return recipes

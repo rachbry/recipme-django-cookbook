@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+
+
+<div class="container my-5">
+    <h2 class="text-center p-2">Search Results</h2>
+
+    <div class="container d-flex flex-row flex-wrap justify-content-center my-5">
+        {% if recipes %}
+            {% for recipe in recipes %}
+            <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes" aria-label="Click to view {{recipe.title}}">
+                <div class="card m-3 recipe-card">
+                    <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
+                    <div class="card-body">
+                        <h2 class="card-title">{{recipe.title}}</h2>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+        {% else %}
+        <p>No results found.</p>
+    </div>
+        {% endif %}
+</div>
+
+{% endblock %}
+
+{% block onload_js %}
+
+{% endblock %}
