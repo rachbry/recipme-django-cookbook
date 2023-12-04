@@ -57,6 +57,7 @@ class Recipes(ListView):
         return recipes
 
 
+
 class MyRecipes(LoginRequiredMixin, ListView):
     """
     View personalized recipes for the logged-in user
@@ -69,52 +70,23 @@ class MyRecipes(LoginRequiredMixin, ListView):
         query = self.request.GET.get('q')
         user = self.request.user
 
+        base_query = (
+            Q(title__icontains=query) |
+            Q(description__icontains=query) |
+            Q(instructions__icontains=query) |
+            Q(ingredients__icontains=query) |
+            Q(recipe_types__icontains=query) |
+            Q(cooking_method__icontains=query)
+        )
+
+        recipes = self.model.objects.all()
+
         if query:
-            recipes = self.model.objects.filter(
-                Q(title__icontains=query) |
-                Q(description__icontains=query) |
-                Q(instructions__icontains=query) |
-                Q(ingredients__icontains=query) |
-                Q(recipe_types__icontains=query) |
-                Q(cooking_method__icontains=query)
-            )
-        else:
-            recipes = self.model.objects.all()
+            recipes = recipes.filter(base_query)
 
         filtered_recipes = recipes.filter(Q(user=user) | Q(user__is_staff=True))
 
         return filtered_recipes
-
-
-# class MyRecipes(LoginRequiredMixin, ListView):
-#     """
-#     View personlised recipes for logged in user
-#     """
-#     template_name = 'recipes/my_recipes.html'
-#     model = Recipe
-#     context_object_name = 'recipes'
-
-#     def get_queryset(self):
-#         query = self.request.GET.get('q')
-#         user = self.request.user
-
-#         base_query = (
-#             Q(title__icontains=query) | 
-#             Q(description__icontains=query) | 
-#             Q(instructions__icontains=query) | 
-#             Q(ingredients__icontains=query) | 
-#             Q(recipe_types__icontains=query) | 
-#             Q(cooking_method__icontains=query)
-#         )
-
-#         if query:
-#             recipes = self.model.objects.filter(base_query)
-#         else:
-#             recipes = self.model.objects.all()
-
-#         filtered_recipes = recipes.filter(Q(user=user) | Q(user__is_staff=True))
-
-#         return filtered_recipes
 
 
 class FullRecipe(DetailView):
