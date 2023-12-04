@@ -51,6 +51,8 @@ class Recipe(models.Model):
 
     freezable = models.BooleanField(default=False)
 
+    is_favourite = models.BooleanField(default=False)
+
     def __str__(self):
         return str(self.title)
 
