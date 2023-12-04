@@ -51,6 +51,9 @@ class Recipe(models.Model):
 
     freezable = models.BooleanField(default=False)
 
+    is_favourite = models.BooleanField(default=False)
+    favorited_by = models.ManyToManyField(User, blank=True)
+
     def __str__(self):
         return str(self.title)
 

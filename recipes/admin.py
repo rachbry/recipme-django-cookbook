@@ -6,6 +6,7 @@ from .models import Recipe
 
 class RecipeAdmin(admin.ModelAdmin):
     list_display = (
+        'user',
         'title',
         'slug',
         'description',

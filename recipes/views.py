@@ -1,11 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import (
     CreateView, ListView, DetailView, DeleteView, UpdateView
 )
-
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import(
     UserPassesTestMixin, LoginRequiredMixin
 )
+
+from django.views import View
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 from django.db.models import Q
 from django.core.exceptions import PermissionDenied
@@ -189,3 +193,27 @@ class SearchResultsView(ListView):
             recipes = Recipe.objects.all()
 
         return recipes
+
+class ToggleFavouriteView(View):
+    """
+    Add or remove recipe from favourites
+    """
+    def post(self, request, *args, **kwargs):
+        recipe_id = self.kwargs['pk']
+        recipe = get_object_or_404(Recipe, pk=recipe_id)
+        recipe.is_favourite = not recipe.is_favourite
+        recipe.save()
+        return HttpResponseRedirect(reverse('full_recipe', args=[recipe_id]))
+
+
+@login_required
+def toggle_favourite(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk)
+
+    # Check if the user has already favorited the recipe
+    if request.user in recipe.favorited_by.all():
+        recipe.favorited_by.remove(request.user)
+    else:
+        recipe.favorited_by.add(request.user)
+
+    return redirect('full_recipe', pk=pk)

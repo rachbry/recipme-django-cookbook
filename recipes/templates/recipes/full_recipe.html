@@ -31,6 +31,13 @@
                 <a href="{% url 'edit_recipe' recipe.id %}" class="btn button-action w-25 mx-5">Edit</a>
                 <a href="{% url 'delete_recipe' recipe.id %}" class="btn button-action w-25 mx-5">Delete</a>
             </div>
+
+            <!-- favourite button -->
+            <form method="post" action="{% url 'toggle_favourite' recipe.pk %}">
+                {% csrf_token %}
+                <button type="submit">Toggle Favourite</button>
+            </form>
+            
         </div>
     </div>
 
