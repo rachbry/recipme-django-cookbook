@@ -50,6 +50,7 @@ main {
 .uppercase {
     text-transform: uppercase;
 }
+
 /* buttons */
 
 .button-action {
@@ -66,16 +67,7 @@ main {
     color: var(--off-white);
 }
 
-/* home page */
-/* .jumbotron {
-    background-image: url("https://res.cloudinary.com/de9lbkrcb/image/upload/v1701525668/ella-olsson-KPDbRyFOTnE-unsplash_ocpm5z.jpg");
-    background-size: cover;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
+/* Homepage */
 .jumbotron-container {
     background-image: url("https://res.cloudinary.com/de9lbkrcb/image/upload/v1701525668/ella-olsson-KPDbRyFOTnE-unsplash_ocpm5z.jpg");
     background-color: rgba(0, 0, 0, 0.3);
@@ -216,8 +208,6 @@ a.navbar-brand {
     text-decoration: none;
 }
 
-
-
 .flex-container {
     display: flex;
     justify-content: space-between; /* Adjust as needed */
@@ -262,7 +252,39 @@ box-shadow: var(--small-box-shadow);
 
 .freeze {
     color: #90D2FA;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     width: auto;
     padding-top: 5px;
+}
+
+.icon-buttons {
+    transform: scale(1.2); /* Adjust the larger scale as needed */
+    transition: transform 0.3s ease;
+}
+
+.icon-favourite {
+    color: var(--yellow);
+}
+
+.icon-delete {
+    color: red;   
+}
+
+.icon-edit {
+    color: var(--grey);   
+}
+
+.recipe-page-buttons {
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
+.icon-text {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.recipe-page-buttons:hover .icon-buttons {
+    transform: scale(1.6);
 }

@@ -19,29 +19,45 @@
             </div>
             <button onclick="toggleDescription()" class="read-more-button">Read More</button>
             <hr>
-            <div class="flex-container">
+            <div class="d-flex align-items-center justify-content-between px-4">
                 {% if recipe.freezable %}
-                <p><i class="fa-solid fa-snowflake freeze"></i> suitable for freezing</p>
+                <p class="special-text"><i class="fa-solid fa-snowflake freeze"></i> suitable for freezing</p>
                 {% else %}
-                <p><i class="fa-solid fa-ban fa-xlg freeze"></i>not suitable for freezing</p>
+                <p class="special-text"><i class="fa-solid fa-ban fa-xlg freeze"></i> not suitable for freezing</p>
                 {% endif %}
-                <p>servings: {{recipe.servings}}</p>
+                <p class="special-text">servings: {{recipe.servings}}</p>
             </div>
-            <div class="container recipe-button">
-                <a href="{% url 'edit_recipe' recipe.id %}" class="btn button-action w-25 mx-5">Edit</a>
-                <a href="{% url 'delete_recipe' recipe.id %}" class="btn button-action w-25 mx-5">Delete</a>
+            <hr>
+
+<!-- BUTTONS - EDIT, DELETE AND FAVOURITES -->
+            <div class="container recipe-button d-flex justify-content-between">
+                <a href="{% url 'edit_recipe' recipe.id %}" class="btn recipe-page-buttons w-25 mx-1">
+                    <i class="fas fa-edit icon-edit icon-buttons"></i>
+                    <p class="icon-text special-text">Edit</p>
+                </a>
+                <a href="{% url 'delete_recipe' recipe.id %}" class="btn recipe-page-buttons w-25 mx-1">
+                    <i class="fas fa-trash-alt icon-delete icon-buttons"></i>
+                    <p class="icon-text special-text">Delete</p>
+                </a>
 
                 <!-- favourites button -->
                 {% if request.user.is_authenticated %}
-
-                    {% if fav %}
-                        <a href="{% url 'favourite_add' recipe.id %}" class="btn button-action w-25 mx-5">Remove from favourites</a>
-                    {% else %}
-                        <a href="{% url 'favourite_add' recipe.id %}" class="btn button-action w-25 mx-5">Add to favourites</a>
-                    {% endif %}
-
+                {% if fav %}
+                <a href="{% url 'favourite_add' recipe.id %}" class="btn recipe-page-buttons w-33 mx-1">
+                    <i class="fas fa-star icon-favourite icon-buttons"></i>
+                    <p class="icon-text special-text">favourite</p>
+                </a>
                 {% else %}
-                    <a href="{% url 'account_signup' recipe.id %}" class="btn button-action w-25 mx-5">Add to favourites</a>
+                <a href="{% url 'favourite_add' recipe.id %}" class="btn recipe-page-buttons w-33 mx-1">
+                    <i class="far fa-star icon-favourite icon-buttons"></i>
+                    <p class="icon-text special-text">favourite</p>
+                </a>
+                {% endif %}
+                {% else %}
+                <a href="{% url 'account_signup' %}" class="btn recipe-page-buttons w-33 mx-1">
+                    <i class="fa-regular fa-star icon-favourite icon-buttons"></i>
+                    <p class="icon-text special-text">favourite</p>
+                </a>
                 {% endif %}
 
             </div>
