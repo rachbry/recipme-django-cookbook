@@ -187,7 +187,7 @@ a.navbar-brand {
 }
 
 /* password restriction text on sign up page */
-#id_password1_helptext {
+#hint_id_password1 {
     text-align: left;
 }
 
