@@ -3,12 +3,13 @@
 {% block title %}Recipes{% endblock %}
 
 {% block content %}
-<h1>My Recipes</h1>
 
-
-<!-- Carousel for all recipes -->
-<div class="container">
-    <h2 class="text-center p-2">All site recipes</h2>
+<div class="container mt-5">
+    <h2 class="text-center p-2">Get Inspired!</h2>
+    <p>Explore a world of flavors with our collection of universal recipes shared by passionate cooks from around the globe. Whether you're a seasoned chef or a kitchen novice, this curated selection offers a diverse range of dishes that cater to every taste bud.</p>
+    <p>From classic comfort foods to exotic culinary creations, these recipes are a celebration of cultural richness and culinary expertise. Dive into the gastronomic wonders that our community has generously shared, and embark on a culinary journey that transcends borders.</p>
+    <p>Feel free to browse, get inspired, and try your hand at creating these delightful dishes. Each recipe tells a story, and we invite you to become a part of this global culinary narrative. Share your cooking adventures, connect with fellow food enthusiasts, and savor the joy of bringing people together through the art of cooking.</p>
+    <p>Happy cooking and bon appétit!</p>
 
     <div class="container d-flex flex-row flex-wrap justify-content-center">
         {% for recipe in recipes %}

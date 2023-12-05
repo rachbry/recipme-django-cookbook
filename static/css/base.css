@@ -191,6 +191,21 @@ a.navbar-brand {
     text-align: left;
 }
 
+/* Recipe Cards */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-overlay-icon {
+    font-size: 2rem;
+    margin: 10px;
+    text-shadow: 0 0 5px var(--grey);
+
+}
+
 /* Recipes page */
 
 .recipes {
