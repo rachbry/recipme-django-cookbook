@@ -47,6 +47,7 @@ class Recipes(ListView):
 
     def get_queryset(self, **kwargs):
         query = self.request.GET.get('q')
+        user = self.request.user
         if query:
             recipes = self.model.objects.filter(
                 Q(title__icontains=query) | 
@@ -58,6 +59,11 @@ class Recipes(ListView):
             ) 
         else:
             recipes = self.model.objects.all()
+
+        # Add is_favourite field to each recipe in the queryset
+        for recipe in recipes:
+            recipe.is_favourite = is_favourite(user.id, recipe.id)
+
         return recipes
 
 

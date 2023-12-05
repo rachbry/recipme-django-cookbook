@@ -81,7 +81,6 @@
 
 <hr class="my-5">
 
-
 <!-- Carousel slow cooker recipes -->
 <div class="container">
     <h2>Slow cooker Recipes</h2>
@@ -92,6 +91,11 @@
             <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes" aria-label="Click to view {{recipe.title}}">
                 <div class="card m-3 recipe-card">
                     <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
+                    <div class="card-overlay">
+                        {% if recipe.is_favourite %}
+                            <i class="fa fa-star icon-favourite card-overlay-icon"></i>
+                        {% endif %}
+                    </div>
                     <div class="card-body">
                         <h2 class="card-title">{{recipe.title}}</h2>
                     </div>
