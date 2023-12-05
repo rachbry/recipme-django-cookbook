@@ -49,6 +49,10 @@ main {
     background-color: var(--white);
 }
 
+.overflow-auto {
+    overflow-x: auto; /* or overflow-x: scroll; */
+}
+
 .uppercase {
     text-transform: uppercase;
 }
