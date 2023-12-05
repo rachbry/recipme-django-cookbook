@@ -214,6 +214,11 @@ class SearchResultsView(ListView):
             # No query, show all recipes
             recipes = Recipe.objects.all()
 
+        # Add is_favourite field to each recipe in the queryset
+        if user.is_authenticated:
+            for recipe in recipes:
+                recipe.is_favourite = is_favourite(user.id, recipe.id)
+                
         return recipes
 
 
