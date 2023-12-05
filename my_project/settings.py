@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
+
+from recipes.context_processors import add_fav_to_context
+
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
@@ -106,6 +109,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'recipes.context_processors.add_fav_to_context',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',

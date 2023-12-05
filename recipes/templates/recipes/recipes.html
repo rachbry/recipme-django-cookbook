@@ -11,11 +11,18 @@
     <p>Feel free to browse, get inspired, and try your hand at creating these delightful dishes. Each recipe tells a story, and we invite you to become a part of this global culinary narrative. Share your cooking adventures, connect with fellow food enthusiasts, and savor the joy of bringing people together through the art of cooking.</p>
     <p>Happy cooking and bon appétit!</p>
 
+    {{ user_favourite_recipes }}
     <div class="container d-flex flex-row flex-wrap justify-content-center">
         {% for recipe in recipes %}
         {% if recipe.user.is_superuser %}
         <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes" aria-label="Click to view {{recipe.title}}">
             <div class="card m-3 recipe-card">
+                <!-- Favourite icon overlay -->
+                <div class="card-overlay">
+                    {% if recipe in user_favourite_recipes %}
+                    <i class="fa fa-star icon-favourite card-overlay-icon"></i>
+                    {% endif %}
+                </div>
                 <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
                 <div class="card-body">
                     <h2 class="card-title">{{recipe.title}}</h2>

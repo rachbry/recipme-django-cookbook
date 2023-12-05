@@ -50,22 +50,21 @@
     <div id="myRecipesCarousel" class="carousel slide" data-ride="carousel">
         <div class="d-flex flex-nowrap overflow-auto">
             {% for recipe in recipes %}
-            {% if recipe.user == request.user %}
-            <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes" aria-label="Click to view {{recipe.title}}">
-                <div class="card m-3 recipe-card">
-                    <!-- Favourite icon overlay -->
-                    <div class="card-overlay">
-                        {% if recipe in user_favourite_recipes %}
-                        <i class="fa fa-star icon-favourite card-overlay-icon"></i>
-                        {% endif %}
-                    </div>
-                    <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
-                    <div class="card-body">
-                        <h2 class="card-title">{{recipe.title}}</h2>
-                    </div>
-                </div>
-            </a>
-            {% endif %}
+                {% if recipe.user == request.user %}
+                    <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes" aria-label="Click to view {{recipe.title}}">
+                        <div class="card m-3 recipe-card">
+                            <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
+                            <div class="card-overlay">
+                                {% if recipe.is_favourite %}
+                                    <i class="fa fa-star icon-favourite card-overlay-icon"></i>
+                                {% endif %}
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title">{{recipe.title}}</h2>
+                            </div>
+                        </div>
+                    </a>
+                {% endif %}
             {% endfor %}
             <!-- carousel buttons -->
         </div>

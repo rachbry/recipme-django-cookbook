@@ -16,25 +16,24 @@ from django.db.models import Q
 from django.core.exceptions import PermissionDenied
 from django.contrib.messages.views import SuccessMessageMixin
 
-# from utils.helpers import get_queryset_with_query
+from .utils import is_favourite
 from .models import Recipe
 from .forms import RecipeForm
 
-# Create your views here.
-class AddRecipe(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+
+class AddRecipe(LoginRequiredMixin, CreateView):
     """
     Add recipe view
     """
     template_name = 'recipes/add_recipe.html'
     model = Recipe
     form_class = RecipeForm
-    success_url = '/recipes'
-    success_message = "Recipe added successfully!"
+    success_url = '/'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-
-        return super(AddRecipe, self).form_valid(form)
+        messages.success(self.request, "Recipe added successfully!")
+        return super().form_valid(form)
 
 
 
@@ -60,7 +59,6 @@ class Recipes(ListView):
         else:
             recipes = self.model.objects.all()
         return recipes
-
 
 
 class MyRecipes(LoginRequiredMixin, ListView):
@@ -90,6 +88,10 @@ class MyRecipes(LoginRequiredMixin, ListView):
             recipes = recipes.filter(base_query)
 
         filtered_recipes = recipes.filter(Q(user=user) | Q(user__is_staff=True))
+
+        # Add is_favourite field to each recipe in the queryset
+        for recipe in filtered_recipes:
+            recipe.is_favourite = is_favourite(user.id, recipe.id)
 
         return filtered_recipes
 
@@ -122,25 +124,21 @@ class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'recipes/edit_recipe.html'
     model = Recipe
     form_class = RecipeForm
-    success_url = 'my_recipes'
-    success_message = "Recipe added successfully!"
+    success_url = '/'
 
     def test_func(self):
         return self.request.user.is_authenticated and self.request.user == self.get_object().user
 
     def handle_no_permission(self):
-        # Raise a PermissionDenied exception
         raise PermissionDenied("You do not have permission to edit this recipe.")
 
     def handle_exception(self, exc):
-        # Handle PermissionDenied exception and redirect to 403.html
         if isinstance(exc, PermissionDenied):
             messages.error(self.request, "You do not have permission to edit this recipe.")
             return render(self.request, '403.html', status=403)
         return HttpResponseForbidden()
 
     def form_valid(self, form):
-        # If the form is valid, display a success message
         messages.success(self.request, 'Recipe updated successfully!')
         return super().form_valid(form)
     
@@ -153,7 +151,7 @@ class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     Deletes a recipe
     """
     model = Recipe
-    success_url = '/recipes/'
+    success_url = '/'
 
     def test_func(self):
         return self.request.user == self.get_object().user
