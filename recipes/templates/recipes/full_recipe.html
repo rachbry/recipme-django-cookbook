@@ -4,14 +4,14 @@
 {% block title %}Recipe - {{recipe.title}}{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
+<div class="container mt-5">
     <div class="row">
-        <div class="col-md-5 mb-4">
+        <div class="col-md-4 my-4 d-flex justify-content-center">
             <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="recipe-pic">
         </div>
-        <div class="col-md-7 mb-4">
-            <h1 class="">{{recipe.title}}</h1>
-            <p class="text-center">Posted on {{recipe.posted_date}}</p>
+        <div class="col-md-8 mb-4">
+            <h2 class="my-1">{{recipe.title}}</h2>
+            <p class="mute">Posted on {{recipe.posted_date}}</p>
             <div id="recipeDescriptionContainer" class="description-container">
                 <p class="card-text" id="recipeDescription">
                     {{recipe.description}}

@@ -122,7 +122,8 @@ class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'recipes/edit_recipe.html'
     model = Recipe
     form_class = RecipeForm
-    success_url = '/recipes/'
+    success_url = 'my_recipes'
+    success_message = "Recipe added successfully!"
 
     def test_func(self):
         return self.request.user.is_authenticated and self.request.user == self.get_object().user
@@ -142,6 +143,9 @@ class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         # If the form is valid, display a success message
         messages.success(self.request, 'Recipe updated successfully!')
         return super().form_valid(form)
+    
+    def get_success_url(self):
+        return self.request.path
 
 
 class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):

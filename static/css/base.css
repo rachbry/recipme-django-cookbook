@@ -7,10 +7,11 @@ font-family: 'Playfair Display', serif;*/
 :root {
     /* Fonts */
     --title: 'Josefin Sans', sans-serif;
-    --main-font: 'Josefin Sans', sans-serif;
+    --main-font: 'Playfair Display', sans-serif;
     /* Colours */
     --background: #3f006a0f;
     --grey: #545454;
+    --light-grey: #8b8787;
     --off-white: #f5f4f3;
     --white: #fff;
     --yellow: #ffbd59;
@@ -38,6 +39,7 @@ body {
 h1, h2, h3, h4, h5, h6, .special-text {
     font-family: var(--title);
     text-transform: uppercase;
+    font-weight: 500;
     letter-spacing: 2px;
     color: var(--grey);
 }
@@ -50,6 +52,13 @@ main {
 .uppercase {
     text-transform: uppercase;
 }
+
+.mute {
+    color: var(--light-grey);
+    font-style: italic;
+    letter-spacing: 0.75px;
+}
+
 
 /* buttons */
 
@@ -239,10 +248,14 @@ a.navbar-brand {
     color: var(--coral);
 }
 
-.card-recipe-info {
-background-color: var(--off-white);
+.card-recipe-info .card-body {
+background-color: var(--white);
 box-shadow: var(--small-box-shadow);
+padding: 2rem;
+}
 
+.card-recipe-info li {
+    margin-bottom: 1rem;
 }
 
 .post-it-note {

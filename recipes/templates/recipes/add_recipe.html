@@ -10,12 +10,10 @@
 
         <!-- Display success message -->
         {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+        <div class="latest-message">
+            {{ messages.0 }} {# Use index 0 to get the first message #}
+        </div>
+        {% endif %}
 
         {{ form.media }}
         {{ form| crispy }}

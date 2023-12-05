@@ -11,5 +11,4 @@ urlpatterns = [
     path('search/', SearchResultsView.as_view(), name='search_results'),
     path('fav/<int:id>/', favourite_add, name='favourite_add'),
     path('favourite_recipes/', favourite_list, name='favourite_list'),
-
 ]

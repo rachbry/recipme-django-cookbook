@@ -9,3 +9,7 @@ function scrollRecipes(direction) {
         container.scrollLeft += scrollAmount;
     }
 }
+
+function goBack() {
+    window.history.back();
+}
