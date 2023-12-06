@@ -4,32 +4,33 @@
 
 
 
-<div class="container mt-5">
-  <h2>Favourite recipes</h2>
-  <div id="favouriteRecipesCarousel" class="carousel slide" data-ride="carousel">
-    <div class="d-flex flex-nowrap overflow-auto">
+<div class="container mt-5 px-5 text-center">
+  <h2 class="my-3">{{request.user.username}}'s Favourite recipes</h2>
+  <div class="container col-md-12">
+    <div class="d-flex flex-row flex-wrap justify-content-center">
       {% if user_favourite_recipes %}
       {% for recipe in user_favourite_recipes %}
-      <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes" aria-label="Click to view {{recipe.title}}">
-        <div class="card m-3 recipe-card">
-          <!-- Favourite icon overlay -->
-          <div class="card-overlay">
-            {% if recipe in user_favourite_recipes %}
-            <i class="fa fa-star icon-favourite card-overlay-icon"></i>
-            {% endif %}
-          </div>
-
-          <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
-          <div class="card-body">
-            <h2 class="card-title">{{recipe.title}}</h2>
-          </div>
-        </div>
-      </a>
-      {% endfor %}
-      {% else %}
-      <p>You haven't added any recipes to your favorites yet.</p>
-      {% endif %}
+        <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes"
+            aria-label="Click to view {{recipe.title}}">
+            <div class="card m-3 recipe-card">
+                <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
+                <div class="card-overlay">
+                    {% if recipe.is_favourite %}
+                    <i class="fa fa-star icon-favourite card-overlay-icon"></i>
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">{{recipe.title}}</h2>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+        {% else %}
+        <p>You haven't added any recipes to your favorites yet.</p>
+        {% endif %}
     </div>
   </div>
 </div>
 {% endblock %}
+
+

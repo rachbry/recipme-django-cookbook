@@ -180,7 +180,7 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = 'accounts/login'
 LOGIN_REDIRECT_URL = '/'
 
-ACCOUNT_EMAIL_VERIFICATION = 'none '
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 
 # Static files (CSS, JavaScript, Images)

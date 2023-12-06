@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6, .special-text {
     font-family: var(--title);
     text-transform: uppercase;
     font-weight: 500;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
     color: var(--grey);
 }
 
@@ -60,7 +60,7 @@ main {
 .mute {
     color: var(--light-grey);
     font-style: italic;
-    letter-spacing: 0.75px;
+    letter-spacing: 0.05rem;
 }
 
 
@@ -76,7 +76,7 @@ main {
 .button-action:hover {
     background-color: var(--coral);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.06rem;
     color: var(--off-white);
 }
 
@@ -150,7 +150,7 @@ footer {
     font-family:'Josefin Sans', sans-serif;
     font-size: 1.2rem;
     font-weight: 300;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
     align-items: center;
 }
 
@@ -180,6 +180,19 @@ a.navbar-brand {
 .active {
     border-bottom: 2px solid var(--dark);
 }
+
+.navbar li {
+    font-size: 1rem;
+}
+
+.input-group-append .button-action {
+    font-size: 0.6rem;
+}
+
+.input-group-append .button-action {
+    font-size: 0.6rem;
+}
+
 
 /* form */
 

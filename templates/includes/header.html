@@ -16,17 +16,17 @@
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0 uppercase">
             <li class="nav-item">
                 <a class="nav-link {% if request.path == '/' %}active{% endif %}" aria-current="page"
-                    href="{% url 'home:home' %}">Home</a>
+                    href="{% url 'home:home' %}">My Recipes</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {% if url_name == 'recipes' %}active{% endif %}"
-                    href="{% url 'recipes' %}">Recipes</a>
+                    href="{% url 'recipes' %}">Recipmes</a>
             </li>
             <!-- login or out -->
             {% if user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link {% if request.path == '/recipes/add-recipe' %}active{% endif %}"
-                    href="{% url 'add_recipe' %}">Add Recipe</a>
+                    href="{% url 'add_recipe' %}">Add<i class="fa-solid fa-plus"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
@@ -44,10 +44,13 @@
             {% endif %}
         </ul>
         <!-- Search bar -->
-        <form class="d-flex" role="search" method="GET" action="{% url 'search_results' %}">
-            <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn button-action my-2 my-sm-0" type="submit">Search</button>
+        <form class="form-inline my-2 my-lg-0 d-flex flex-sm-row flex-column" role="search" method="GET" action="{% url 'search_results' %}">
+            <div class="input-group">
+                <input class="form-control form-control-sm mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn button-action ms-2 ms-sm-0" type="submit">Search</button>
+                </div>
+            </div>
         </form>
-
     </div>
 </nav>
