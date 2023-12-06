@@ -17,7 +17,6 @@
                     {{recipe.description}}
                 </p>
             </div>
-            <button onclick="toggleDescription()" class="read-more-button">Read More</button>
             <hr>
             <div class="d-flex align-items-center justify-content-between px-4">
                 {% if recipe.freezable %}
@@ -82,16 +81,9 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="card post-it-note">
-            <h4 class="card-title">Notes</h4>
-            <p class="card-text"></p>
-        </div>
-
-    </div>
 </div>
 {% endblock %}
 
 {% block onload_js %}
-<script src="{% static 'js/base.js' %}"></script>
+
 {% endblock %}

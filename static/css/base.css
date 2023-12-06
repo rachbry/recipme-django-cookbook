@@ -63,6 +63,14 @@ main {
     letter-spacing: 0.05rem;
 }
 
+.justify-text {
+    text-align: justify;
+}
+
+.left-text {
+    text-align: left;
+}
+
 
 /* buttons */
 
@@ -331,6 +339,17 @@ padding: 2rem;
     font-size: 0.8rem;
 }
 
-.recipe-page-buttons:hover .icon-buttons {
-    transform: scale(1.6);
+.recipe-card-title {
+    text-align: center;
+    font: var(--main-font);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.recipe-card:hover .recipe-card-title {
+    transform: scale(1.2); /* Adjust the larger scale as needed */
+    transition: transform 0.3s ease;
+    text-decoration: none;
 }
