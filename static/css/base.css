@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6, .special-text {
     font-family: var(--title);
     text-transform: uppercase;
     font-weight: 500;
-    letter-spacing: 0.125rem;
+    letter-spacing: 0.12rem;
     color: var(--grey);
 }
 
@@ -125,12 +125,7 @@ main {
 
 /* Footer */
 footer {
-    flex-shrink: 0;
     background-color: var(--coral);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     padding: 1rem;
 }
 
@@ -138,6 +133,12 @@ footer {
     height: 2rem;
     margin: 1rem;
     color: var(--off-white);
+}
+
+footer .special-text {
+    color: var(--off-white);
+    letter-spacing: 1px;
+    font-weight: 300;
 }
 
 /* Header */
