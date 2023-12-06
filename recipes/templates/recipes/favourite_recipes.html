@@ -10,7 +10,7 @@
     <div class="d-flex flex-row flex-wrap justify-content-center">
       {% if user_favourite_recipes %}
       {% for recipe in user_favourite_recipes %}
-        <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes"
+        <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes recipe-card-title"
             aria-label="Click to view {{recipe.title}}">
             <div class="card m-3 recipe-card">
                 <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
@@ -20,7 +20,7 @@
                     {% endif %}
                 </div>
                 <div class="card-body">
-                    <h2 class="card-title">{{recipe.title}}</h2>
+                    <h2 class="card-title recipe-card-title">{{recipe.title}}</h2>
                 </div>
             </div>
         </a>

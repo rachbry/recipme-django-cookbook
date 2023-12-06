@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Recipe{% endblock %}
+
+{% block content %}
+    <div class="container text-center my-5">
+        <h1>404 - Unauthorised Access</h1>
+        <p>You are not authorised to perform this action.</p>
+        <a href="{% url 'home:home' %}" class="btn button-action w-25 my-5">Home</a>
+    </div>
+
+{% endblock %}

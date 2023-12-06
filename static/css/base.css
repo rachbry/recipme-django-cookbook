@@ -6,10 +6,11 @@ font-family: 'Playfair Display', serif;*/
 
 :root {
     /* Fonts */
-    --title: 'Josefin Sans', sans-serif;
-    --main-font: 'Playfair Display', sans-serif;
+    
+    --title: 'Playfair Display', serif;
+    --main-font: 'Josefin Sans', sans-serif;
+    
     /* Colours */
-    --background: #3f006a0f;
     --grey: #545454;
     --light-grey: #8b8787;
     --off-white: #f5f4f3;
@@ -17,6 +18,7 @@ font-family: 'Playfair Display', serif;*/
     --yellow: #ffbd59;
     --dark: #253439;
     --coral: #ff5757;
+
     /* Utils */
     --small-box-shadow: 1px -1px 9px 0 #00000061;
     --border: 1px solid var(--grey);
@@ -348,7 +350,7 @@ padding: 2rem;
     text-decoration: none;
 }
 
-.recipe-card:hover .recipe-card-title {
+h2 .recipe-card:hover .recipe-card-title {
     transform: scale(1.2); /* Adjust the larger scale as needed */
     transition: transform 0.3s ease;
     text-decoration: none;

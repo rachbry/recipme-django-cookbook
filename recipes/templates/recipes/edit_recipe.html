@@ -4,16 +4,10 @@
 {% block title %}Edit Recipe{% endblock %}
 <script src="{% static 'js/base.js' %}"></script>
 {% block content %}
-        <!-- Display success message -->
-        <!-- {% if messages %}
-        <div class="latest-message">
-            {{ messages.0 }} {# Use index 0 to get the first message #}
-        </div> -->
 <div class="container">
     <form method="post" enctype="multipart/form-data" class="p-2 form">
         <h1 class="text-center">Edit Recipe</h1>
         {% csrf_token %}
-        {% endif %}
         {{ form.media }}
         {{ form| crispy }}
         <div class="text-center">

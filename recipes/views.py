@@ -131,7 +131,7 @@ class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'recipes/edit_recipe.html'
     model = Recipe
     form_class = RecipeForm
-    success_url = '/'
+    success_url = '/recipes'
 
     def test_func(self):
         return self.request.user.is_authenticated and self.request.user == self.get_object().user
