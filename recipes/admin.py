@@ -3,8 +3,6 @@ from .models import Recipe
 
 
 @admin.register(Recipe)
-
-
 class RecipeAdmin(admin.ModelAdmin):
     list_display = (
         'user',
@@ -21,4 +19,4 @@ class RecipeAdmin(admin.ModelAdmin):
         'freezable'
     )
     list_filter = ('recipe_types', 'cooking_method',)
-    prepopulated_fields = {'slug':('title',)}
+    prepopulated_fields = {'slug': ('title',)}
