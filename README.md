@@ -180,6 +180,7 @@ Future features not implemented at this time include:
 - Upload recipes to main site - The ability to request admin approval for a recipe to be added to the site wide collection
 
 ## Testing
+[Testing](testing.md)
 ### Validation Testing
 **HTML**
 
