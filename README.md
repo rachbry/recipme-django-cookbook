@@ -93,19 +93,18 @@ Out of scope for this release:
 | Submit my recipe to admin to be available for all users | Share this recipe with everyone on the site | 1: Be able to submit admin recipe request 2: Admin can approve and submit to general site |
 
 
-## Design Choices
-###  Colours
-### Typography
-Colour Pallete:
-
-![image](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/027c781a-346b-4ed8-93ed-9a42815c0f0f)
-
-Logo:
-![image](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ea618f02-99f6-4947-a764-8ffe40bb4155)
 
 ## Workflow
 ### Agile Methodology
-Github Projects
+For this project I adopted an Agile methodology.  This is the first time I have used this on a solo project although I have used it as a group during the hackathons.  I feel this has helped me to:
+- Organise and prioritise my workflow.  This has been essential due to the very limited timeframe we had to complete this project.
+- Enabled me to adjust my expectations and still produce the required MVP
+
+I created a site map and workflow diagram:
+![Screenshot 2023-12-07 at 14 12 33](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/c5ed706d-1b01-4a22-8e40-6e4ff5511e61)
+
+I used Github projects to convert my user stories into actionable tasks.  The acceptance criteria was very helpful to ensure all necessary tasks were completed.
+
 ### Diagram I made
 ### ER Diagram
 
@@ -113,7 +112,7 @@ Github Projects
 ### Wireframes and Features
 The site will be fully responsive and accessible on mobile, tablet and desktop devices.
 
-The homepage will feature a jumbotron image and call to action button.  Reasons why you should join listed here.
+The homepage will feature a jumbotron image and call to action button.  Reasons why you should join will be listed here.
 
 ![Screenshot 2023-12-07 at 13 50 23](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/112af580-6678-4e52-b3f3-76db12c4f240)
 
@@ -127,7 +126,7 @@ The homepage will feature a jumbotron image and call to action button.  Reasons 
 - Can view, edit and delete their own recipes
 - Can add recipes to their favourites
   
-They will have a personalised home page with all their recipes on it and will be able to view recipes they have favourited both from their own and the site recipe collections.  Each recipe card will be a clickable link to the full recipe.  The same page layout will be used for the recipe collection, the users homepage and the favourite recipes page to maintain consistency and simplicity throughout.
+They will have a personalised home page with all their recipes on it and will be able to view recipes they have favourited, both from their own and the site recipe collections.  Each recipe card will be a clickable link to the full recipe.  The same page layout will be used for the recipe collection, the users homepage and the favourite recipes page to maintain consistency and simplicity throughout.
 
 ![Screenshot 2023-12-07 at 13 33 50](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/f688c986-8040-48cb-938a-64b20b189f72)
 
@@ -143,10 +142,22 @@ Front End CRUD will be available to add / edit recipes for logged in users.  The
 
 ![Screenshot 2023-12-07 at 13 42 11](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/42943578-41c6-4061-b0e4-e9debaa239bd)
 
+## Design Choices
+###  Colours
+### Typography
+Colour Pallete:
 
+![image](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/027c781a-346b-4ed8-93ed-9a42815c0f0f)
+
+Logo:
+![image](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ea618f02-99f6-4947-a764-8ffe40bb4155)
 ### Walkthough of site including screenshots of every page
 
 ### Future Features
+Future features not implemented at this time include:
+- The ability on the full recipe page to toggle on/off dark mode and prevent your screen turning off, a feature I feel would be very useful when following a recipe
+- Recipe sharing - To be able to share recipes with other users of the site or to email them to others
+- Upload recipes to main site - The ability to request admin approval for a recipe to be added to the site wide collection
 
 ## Testing
 ### Validation Testing
