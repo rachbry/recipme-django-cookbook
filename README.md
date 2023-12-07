@@ -113,25 +113,34 @@ Github Projects
 ### Wireframes and Features
 The site will be fully responsive and accessible on mobile, tablet and desktop devices.
 
-**All Users:**
 The homepage will feature a jumbotron image and call to action button.  Reasons why you should join listed here.
+
 ![Screenshot 2023-12-07 at 13 50 23](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/112af580-6678-4e52-b3f3-76db12c4f240)
+
+
+**All Users:**
 - Are able to view admin added recipes
 - Are able to use the search functionality
 
 **Logged In Users:**
-Will have a personalised home page with all their recipes on it.  They will also be able to view recipes they have favourited both from their own and the site recipe collections.  Each recipe card will be a clickable link to the full recipe.  The same page layout will be used for the recipe collection, the users homepage and the favourite recipes page to maintain consistency and simplicity throughout.
-![Screenshot 2023-12-07 at 13 33 50](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/f688c986-8040-48cb-938a-64b20b189f72)
 - Can add recipes
 - Can view, edit and delete their own recipes
 - Can add recipes to their favourites
+  
+They will have a personalised home page with all their recipes on it and will be able to view recipes they have favourited both from their own and the site recipe collections.  Each recipe card will be a clickable link to the full recipe.  The same page layout will be used for the recipe collection, the users homepage and the favourite recipes page to maintain consistency and simplicity throughout.
+
+![Screenshot 2023-12-07 at 13 33 50](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/f688c986-8040-48cb-938a-64b20b189f72)
+
 
 **The Full Recipe Page:**
 Will contain all the relevent information for each recipe.  Design will ensure all ingredients and instructions are available on one screen for desktop and tablet.
+
 ![Screenshot 2023-12-07 at 13 36 14](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/3e8edc07-582b-41de-8cd6-6ce59475f3be)
+
 
 **Add / Edit Recipe Page:**
 Front End CRUD will be available to add / edit recipes for logged in users.  The form will include category dropdowns and the ability to upload an image.
+
 ![Screenshot 2023-12-07 at 13 42 11](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/42943578-41c6-4061-b0e4-e9debaa239bd)
 
 
