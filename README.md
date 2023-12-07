@@ -12,6 +12,8 @@ Welcome to RecipMe, a place where you can easily store, retrieve and edit your f
 
 From the latest trends to secret family recipes, the simple interface and navigation within RecipMe enables you to not only input your recipes but to edit, tweak or customise them with ease.  Our search functionality ensures these are all easily accessible. 
 
+Browse through our own recipes for inspiration and to your collection.
+
 RecipMe is accessible on all devices, meaning whether you are at home, cooking with others or in the supermarket, you can access your recipes anywhere, anytime.   
 
 ---
@@ -55,11 +57,20 @@ Cooking Enthusiast Sarah represents the target audience for RecipMe:
 **RecipMe caters to individuals like Sarah who are passionate about cooking and seek a convenient solution to manage their recipe collections efficiently.** 
 
 
-
-
-
 ## User Stories
 
+As a non-logged in user:
+|I want to.. | So that I can.. | Acceptance Criteria
+| ----------- | ----------- | ----------- |
+| Create an account | Store my personal recipes | - AC 1:user can create account 
+
+AC 2: user can log in 
+
+AC 3: user can log out 
+
+As a logged in user:
+|I want to.. | So that I can.. | Acceptance Criteria
+| ----------- | ----------- | ----------- |
 
 
 Colour Pallete:
