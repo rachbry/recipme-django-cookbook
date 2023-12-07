@@ -104,9 +104,29 @@ I created a site map and workflow diagram:
 ![Screenshot 2023-12-07 at 14 12 33](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/c5ed706d-1b01-4a22-8e40-6e4ff5511e61)
 
 I used Github projects to convert my user stories into actionable tasks.  The acceptance criteria was very helpful to ensure all necessary tasks were completed.
+![Screenshot 2023-12-07 at 14 17 28](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/3e491c10-88c9-4477-96e9-c529f37d60bc)
 
-### Diagram I made
-### ER Diagram
+### Models
+In RecipMe I used the Django AllAuth User Model and created a custom Recipe Model.  This included the following fields:
+
+|      Name            |     Type                   |     Key  |
+|----------------------|----------------------------|----------|
+|      user            |     User Model             |     FK   |
+|      title           |     CharField              |          |
+|      slug            |     CharField              |          |
+|      description     |     CharField              |          |
+|      instructions    |     RichTextField          |          |
+|      ingredients     |     RichTextField          |          |
+|      freezable       |     boolean                |          | 
+|      serving         |     CharField              |          |
+|      image           |     ResizedImageField      |          |
+|      image_alt       |     CharField              |          | 
+|      Recipe_type     |     CharField  dropdown    |          |
+|      Cooking_method  |     CharField  dropdown    |          |
+|      posted_date     |     DateTimeField          |          |
+
+I also added a many to many field called is_favourite to enable the favourite functionality.
+
 
 ## Design
 ### Wireframes and Features
