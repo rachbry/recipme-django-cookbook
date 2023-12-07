@@ -182,6 +182,8 @@ Future features not implemented at this time include:
 ## Testing
 ### Validation Testing
 **HTML**
+![Screenshot 2023-12-07 at 14 48 21](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/730b9424-7689-43d1-8799-e969fa50de64)
+
 
 **CSS**
 
