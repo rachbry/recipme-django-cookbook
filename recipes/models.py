@@ -16,7 +16,7 @@ RECIPE_TYPES = (
     ('misc', 'Misc'),
 )
 
-COOKING_METHOD =  (
+COOKING_METHOD = (
     ('air fryer', 'Air Fryer'),
     ('bbq', 'BBQ'),
     ('hob', 'Hob'),
@@ -27,38 +27,44 @@ COOKING_METHOD =  (
     ('other', 'Other'),
 )
 
-# Create your models here.
+
 class Recipe(models.Model):
     """
     Model to create and manage recipes
     """
-    user = models.ForeignKey(User, related_name='recipe_owner', on_delete=models.CASCADE)
-    title = models.CharField(max_length=300, null=False, blank=False)
-    slug = models.SlugField(max_length=200, unique=True, null=False)
-    description = models.CharField(max_length=500, null=False, blank=False)
-    instructions = RichTextField(max_length=10000, null=False, blank=False)
+    user = models.ForeignKey(
+        User, related_name='recipe_owner', on_delete=models.CASCADE
+        )
+    title = models.CharField(
+        max_length=300, null=False, blank=False)
+    slug = models.SlugField(
+        max_length=200, unique=True, null=False)
+    description = models.CharField(
+        max_length=500, null=False, blank=False)
+    instructions = RichTextField(
+        max_length=10000, null=False, blank=False)
     ingredients = RichTextField(max_length=10000, null=False, blank=False)
     image = ResizedImageField(
-        size=[400, None], quality=75, upload_to='recipes/', force_format='WEBP', blank=False, null=False
-    )
-    image_alt = models.CharField(max_length=100, null=False, blank=False)
+        size=[400, None], quality=75, upload_to='recipes/',
+        force_format='WEBP', blank=False, null=False)
+    image_alt = models.CharField(
+        max_length=100, null=False, blank=False)
     # dropdowns
-    recipe_types = models.CharField(max_length=50, choices=RECIPE_TYPES, default='baking')
-    cooking_method = models.CharField(max_length=50, choices=COOKING_METHOD, default='air fryer')
-
-    servings = models.CharField(max_length=100, null=False, blank=False)
-    posted_date = models.DateTimeField(auto_now=True)
-
-    freezable = models.BooleanField(default=False)
-
+    recipe_types = models.CharField(
+        max_length=50, choices=RECIPE_TYPES, default='baking')
+    cooking_method = models.CharField(
+        max_length=50, choices=COOKING_METHOD, default='air fryer')
+    servings = models.CharField(
+        max_length=100, null=False, blank=False)
+    posted_date = models.DateTimeField(
+        auto_now=True)
+    freezable = models.BooleanField(
+        default=False)
     favourites = models.ManyToManyField(
         User, related_name='favourite', default=None, blank=True)
-    
 
     def __str__(self):
         return str(self.title)
 
     class Meta:
         ordering = ['-posted_date']
-
-    

@@ -9,17 +9,25 @@ class RecipeForm(forms.ModelForm):
     """
     class Meta:
         model = Recipe
-        fields = ['title', 'description', 'ingredients', 'instructions', 'image', 'image_alt', 'recipe_types', 'cooking_method', 'servings', 'freezable',]
-
-        # ingredients = forms.CharField(widget=RichTextWidget())
-        # instructions = forms.CharField(widget=RichTextWidget())
+        fields = [
+            'title',
+            'description',
+            'ingredients',
+            'instructions',
+            'image',
+            'image_alt',
+            'recipe_types',
+            'cooking_method',
+            'servings',
+            'freezable',
+            ]
 
         widgets = {
-            'description': forms.Textarea(attrs={'rows':5}),
+            'description': forms.Textarea(attrs={'rows': 5}),
         }
 
         labels = {
-            'title': 'Recipe Title', 
+            'title': 'Recipe Title',
             'description': 'Recipe Description',
             'ingredients': 'Recipe Ingredients',
             'instructions': 'Recipe Instructions',
@@ -41,4 +49,3 @@ class RecipeForm(forms.ModelForm):
             instance.save()
 
         return instance
-

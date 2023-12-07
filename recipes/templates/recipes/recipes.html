@@ -3,24 +3,31 @@
 {% block title %}Recipes{% endblock %}
 
 {% block content %}
-
 <div class="container mt-5">
     <h2 class="text-center p-2">Get Inspired!</h2>
-    <p class="justify-text">Explore a world of flavours with our collection of universal recipes shared by passionate cooks from around the globe. Whether you're a seasoned chef or a kitchen novice, this curated selection offers a diverse range of dishes that cater to every taste bud.</p>
-    <p class="justify-text">From classic comfort foods to exotic culinary creations, these recipes are a celebration of cultural richness and culinary expertise. Dive into the gastronomic wonders that our community has generously shared, and embark on a culinary journey that transcends borders.</p>
-    <p class="justify-text">Feel free to browse, get inspired, and try your hand at creating these delightful dishes. Each recipe tells a story, and we invite you to become a part of this global culinary narrative. Share your cooking adventures, connect with fellow food enthusiasts, and savour the joy of bringing people together through the art of cooking.</p>
+    <p class="justify-text">Explore a world of flavours with our collection of universal recipes shared by passionate
+        cooks from around the globe. Whether you're a seasoned chef or a kitchen novice, this curated selection offers a
+        diverse range of dishes that cater to every taste bud.</p>
+    <p class="justify-text">From classic comfort foods to exotic culinary creations, these recipes are a celebration of
+        cultural richness and culinary expertise. Dive into the gastronomic wonders that our community has generously
+        shared, and embark on a culinary journey that transcends borders.</p>
+    <p class="justify-text">Feel free to browse, get inspired, and try your hand at creating these delightful dishes.
+        Each recipe tells a story, and we invite you to become a part of this global culinary narrative. Share your
+        cooking adventures, connect with fellow food enthusiasts, and savour the joy of bringing people together through
+        the art of cooking.</p>
     <p class="justify-text">Happy cooking and bon appétit!</p>
 
     {{ user_favourite_recipes }}
     <div class="container d-flex flex-row flex-wrap justify-content-center">
         {% for recipe in recipes %}
         {% if recipe.user.is_superuser %}
-        <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes recipe-card-title" aria-label="Click to view {{recipe.title}}">
+        <a href="{% url 'full_recipe' pk=recipe.pk %}" class="recipes recipe-card-title"
+            aria-label="Click to view {{recipe.title}}">
             <div class="card m-3 recipe-card">
                 <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
                 <div class="card-overlay">
                     {% if recipe.is_favourite %}
-                        <i class="fa fa-star icon-favourite card-overlay-icon"></i>
+                    <i class="fa fa-star icon-favourite card-overlay-icon"></i>
                     {% endif %}
                 </div>
                 <div class="card-body">

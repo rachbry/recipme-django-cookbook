@@ -27,8 +27,7 @@
                 <p class="special-text">servings: {{recipe.servings}}</p>
             </div>
             <hr>
-
-<!-- BUTTONS - EDIT, DELETE AND FAVOURITES -->
+            <!-- BUTTONS - EDIT, DELETE AND FAVOURITES -->
             <div class="container recipe-button d-flex justify-content-between">
                 <a href="{% url 'edit_recipe' recipe.id %}" class="btn recipe-page-buttons w-25 mx-1">
                     <i class="fas fa-edit icon-edit icon-buttons"></i>
@@ -38,7 +37,6 @@
                     <i class="fas fa-trash-alt icon-delete icon-buttons"></i>
                     <p class="icon-text special-text">Delete</p>
                 </a>
-
                 <!-- favourites button -->
                 {% if request.user.is_authenticated %}
                 {% if fav %}
@@ -58,11 +56,9 @@
                     <p class="icon-text special-text">favourite</p>
                 </a>
                 {% endif %}
-
             </div>
         </div>
     </div>
-
     <div class="row">
         <div class="col-md-4 mb-4">
             <div class="card card-recipe-info">
@@ -82,8 +78,4 @@
         </div>
     </div>
 </div>
-{% endblock %}
-
-{% block onload_js %}
-
 {% endblock %}

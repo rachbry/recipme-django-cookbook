@@ -1,14 +1,9 @@
-/* <style>
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800;1,900&display=swap');
-</style> 
-font-family: 'Josefin Sans', sans-serif;
-font-family: 'Playfair Display', serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
     /* Fonts */
-    
-    --title: 'Playfair Display', serif;
-    --main-font: 'Josefin Sans', sans-serif;
+    --main-font: 'Lato', sans-serif;
+    --title: 'Josefin Sans', sans-serif;
     
     /* Colours */
     --grey: #545454;
@@ -22,7 +17,6 @@ font-family: 'Playfair Display', serif;*/
     /* Utils */
     --small-box-shadow: 1px -1px 9px 0 #00000061;
     --border: 1px solid var(--grey);
-
 }
 
 html, body {
@@ -42,7 +36,7 @@ h1, h2, h3, h4, h5, h6, .special-text {
     font-family: var(--title);
     text-transform: uppercase;
     font-weight: 500;
-    letter-spacing: 0.12rem;
+    letter-spacing: 0.1rem;
     color: var(--grey);
 }
 
@@ -52,7 +46,7 @@ main {
 }
 
 .overflow-auto {
-    overflow-x: auto; /* or overflow-x: scroll; */
+    overflow-x: auto;
 }
 
 .uppercase {
@@ -73,9 +67,7 @@ main {
     text-align: left;
 }
 
-
 /* buttons */
-
 .button-action {
     background-color: var(--off-white);
     border-color: var(--coral);
@@ -83,6 +75,7 @@ main {
     letter-spacing: 1px;
     color: var(--coral);
 }
+
 .button-action:hover {
     background-color: var(--coral);
     text-transform: uppercase;
@@ -97,7 +90,7 @@ main {
     background-blend-mode: overlay;
     height: 500px;
     background-size: cover;
-    background-position: center-left;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,7 +98,6 @@ main {
 
 
 .button-hero {
-
 	border-radius:6px;
 	border:1px solid var(--yellow);
 	display:inline-block;
@@ -123,7 +115,6 @@ main {
     text-decoration: none;
 }
 
-
 .button-hero h3 {
     color: var(--yellow);
 }
@@ -132,7 +123,6 @@ main {
     color: var(--off-white);
     font-weight: 500;
 }
-
 
 /* Footer */
 footer {
@@ -153,7 +143,6 @@ footer .special-text {
 }
 
 /* Header */
-
 .navbar {
     background-color: var(--coral);
     box-shadow: var(--small-box-shadow);
@@ -167,7 +156,7 @@ footer .special-text {
 }
 
 a.navbar-brand {
-    margin-right: 1rem; /* Adjust margin to create space between brand and links */
+    margin-right: 1rem;
 }
 
 .navbar .navbar-toggler-icon {
@@ -180,7 +169,6 @@ a.navbar-brand {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: your-color; /* Set your desired link color */
     color: var(--white);
 }
 
@@ -205,13 +193,10 @@ a.navbar-brand {
     font-size: 0.6rem;
 }
 
-
 /* form */
-
 .form {
     width: 100%;
     margin: 3% auto;
-    /* background-color: var(--off-white); */
     border-radius: 10px;
 }
 
@@ -232,11 +217,9 @@ a.navbar-brand {
     font-size: 2rem;
     margin: 10px;
     text-shadow: 0 0 5px var(--grey);
-
 }
 
 /* Recipes page */
-
 .recipes {
     text-decoration: none;
 }
@@ -244,6 +227,7 @@ a.navbar-brand {
 .recipes:hover {
     cursor: pointer;
 }
+
 .recipe-card {
     width: 18rem;
     height: 90%;
@@ -263,11 +247,10 @@ a.navbar-brand {
 
 .flex-container {
     display: flex;
-    justify-content: space-between; /* Adjust as needed */
+    justify-content: space-between;
 }
 
 /* full recipe page */
-
 .recipe-pic {
     max-height: 250px;
 }
@@ -276,12 +259,12 @@ a.navbar-brand {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
 
 .description-container.expanded {
-    -webkit-line-clamp: unset; /* Show all lines when expanded */
+    -webkit-line-clamp: unset;
 }
 
 .read-more-button {
@@ -293,9 +276,9 @@ a.navbar-brand {
 }
 
 .card-recipe-info .card-body {
-background-color: var(--white);
-box-shadow: var(--small-box-shadow);
-padding: 2rem;
+    background-color: var(--white);
+    box-shadow: var(--small-box-shadow);
+    padding: 2rem;
 }
 
 .card-recipe-info li {
@@ -315,7 +298,7 @@ padding: 2rem;
 }
 
 .icon-buttons {
-    transform: scale(1.2); /* Adjust the larger scale as needed */
+    transform: scale(1.2);
     transition: transform 0.3s ease;
 }
 
