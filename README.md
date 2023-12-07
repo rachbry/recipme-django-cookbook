@@ -182,13 +182,45 @@ Future features not implemented at this time include:
 ## Testing
 ### Validation Testing
 **HTML**
-![Screenshot 2023-12-07 at 14 48 21](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/730b9424-7689-43d1-8799-e969fa50de64)
+
+I used the W3.org validator on my HTML and CSS files.  Please see results below:
+
+|File | URL | Screenshot | Notes |
+|-----|-----|------------|-------|
+|Homepage (not logged in) | [URL](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frecip-me-deee77afa86d.herokuapp.com%2F) | ![Screenshot 2023-12-07 at 18 52 31](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/048815c1-1ef8-42da-92ee-175959a77282)
+ | Document checking completed. No errors or warnings to show. |
+ | Register | https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frecip-me-deee77afa86d.herokuapp.com%2Faccounts%2Fsignup%2F#l93c293 | ![Screenshot 2023-12-07 at 18 56 09](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/b60f5593-5cd8-4304-93f2-c0bb36ee66f0)
+ | Error within AllAuth |
+| Login | https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frecip-me-deee77afa86d.herokuapp.com%2Faccounts%2Flogin%2F#l93c293 | ![Screenshot 2023-12-07 at 18 59 30](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/11f92942-f26f-40fa-bced-ab5afd6af881)
+| Document checking completed. No errors or warnings to show. |
+ |Recipes (not logged in) | https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frecip-me-deee77afa86d.herokuapp.com%2Frecipes%2Frecipes%2F | ![Screenshot 2023-12-07 at 18 54 09](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/d8a3b516-a6e2-43ef-a09f-422862b9d6c9)
+ | Document checking completed. No errors or warnings to show. |
+  |Recipes (not logged in) | https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frecip-me-deee77afa86d.herokuapp.com%2Frecipes%2Frecipes%2F | ![Screenshot 2023-12-07 at 18 54 09](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/d8a3b516-a6e2-43ef-a09f-422862b9d6c9)
+ | Document checking completed. No errors or warnings to show. |
+ | Search Results (not logged in) | https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frecip-me-deee77afa86d.herokuapp.com%2Frecipes%2Fsearch%2F%3Fq%3DPancakes#l93c293 | ![Screenshot 2023-12-07 at 19 05 50](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/dd1cb632-6f77-468d-a233-3d71433e7b85)
+ | Error showing related to unclosed element - unsure how to fix as content is dynamically generated |
+ | Full Recipe Page | https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frecip-me-deee77afa86d.herokuapp.com%2Frecipes%2Frecipes%2F30%2F#l93c293 | ![Screenshot 2023-12-07 at 19 12 12](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/e8527226-ae3b-4699-9e5d-50f4a59fcf26) | Error showing related to unclosed element - unsure how to fix as content is dynamically generated |
+ | Full Recipe Page | https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frecip-me-deee77afa86d.herokuapp.com%2Frecipes%2Frecipes%2F30%2F#l93c293 | ![Screenshot 2023-12-07 at 19 12 12](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/e8527226-ae3b-4699-9e5d-50f4a59fcf26) | Error showing related to unclosed element - unsure how to fix as content is dynamically generated |
+
+  | Logged in home page | [https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frecip-me-deee77afa86d.herokuapp.com%2Frecipes%2Frecipes%2F30%2F#l93c293](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frecip-me-deee77afa86d.herokuapp.com%2Frecipes%2Fmy_recipes%2F#textarea) | ![Screenshot 2023-12-07 at 19 17 56](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/5bd9c27f-5ae9-4513-9913-ab2344a5c7fb)
+ | Document checking completed. No errors or warnings to show. | 
+| Add Recipe | https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frecip-me-deee77afa86d.herokuapp.com%2Frecipes%2Fadd_recipe%2F#textarea | ![Screenshot 2023-12-07 at 19 25 49](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/fe8d7257-ca9d-43a4-932e-a4172d5c7bec) | Document checking completed. No errors or warnings to show. |
+| Edit Recipe | https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frecip-me-deee77afa86d.herokuapp.com%2Frecipes%2Fedit%2F39%2F#textarea | ![Screenshot 2023-12-07 at 19 34 04](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/4ad1af3d-caf2-4d62-8e86-f3ee492bb058)
+| Document checking completed. No errors or warnings to show. | 
+| Delete Recipe | https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frecip-me-deee77afa86d.herokuapp.com%2Frecipes%2Fedit%2F39%2F#textarea | ![Screenshot 2023-12-07 at 19 36 41](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/de6e03b8-db6f-425f-b47b-993905a8450b) | Document checking completed. No errors or warnings to show. |
+| Log out | https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frecip-me-deee77afa86d.herokuapp.com%2Frecipes%2Fedit%2F39%2F#textarea | ![Screenshot 2023-12-07 at 19 38 24](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/700ea94f-63b1-431d-bcbe-66666a8a50f9) | Document checking completed. No errors or warnings to show. | 
+
+I received this error when add the urls for the logged in pages.  I copied the page source and pasted in to get the above results.
+![Screenshot 2023-12-07 at 19 29 33](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/f8ab92ac-08a3-43b5-99b9-15dd3c88d036)
 
 
 **CSS**
+| Base.css | https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frecip-me-deee77afa86d.herokuapp.com%2Frecipes%2Fedit%2F39%2F#textarea | ![Screenshot 2023-12-07 at 19 43 33](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/80bfed4a-a1a8-4b82-9772-a79c5fe5f96c)
+ | Document checking completed. No errors or warnings to show. |
 
 **PYTHON**
-I used the CI Python Linter on all my .py files. Please see results below.
+
+I used the CI Python Linter https://pep8ci.herokuapp.com/# on all my .py files. Please see results below.
 
 **In the My_project Directory:**
 - urls.py:
@@ -225,7 +257,17 @@ I used the CI Python Linter on all my .py files. Please see results below.
 ![Screenshot 2023-12-07 at 17 59 58](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/52dc1537-b18e-4219-97f4-aa38e1591b36)
 
 
-** Lighthouse
+**Lighthouse**
+
+I used Lighthouse to check the quality of my web pages.  Some results are shown below:
+
+-logged in home page Desktop
+![Screenshot 2023-12-07 at 19 59 20](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/6a7d8cf9-b181-494a-a7c1-4373a9284876)
+
+- logged in home page Desktop
+![Screenshot 2023-12-07 at 20 03 49](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/da30f0b4-ed88-4a2a-bf9e-fb33dace8cfe)
+
+
 
 
 ### Manual Testing
