@@ -62,11 +62,7 @@ Cooking Enthusiast Sarah represents the target audience for RecipMe:
 As a non-logged in user:
 |I want to.. | So that I can.. | Acceptance Criteria
 | ----------- | ----------- | ----------- |
-| Create an account | Store my personal recipes | - AC 1:user can create account 
-
-AC 2: user can log in 
-
-AC 3: user can log out 
+| Create an account | Store my personal recipes | - AC 1:user can create account - AC 2: user can log in - AC 3: user can log out 
 
 As a logged in user:
 |I want to.. | So that I can.. | Acceptance Criteria
