@@ -60,12 +60,15 @@ Cooking Enthusiast Sarah represents the target audience for RecipMe:
 ## User Stories
 
 As a non-logged in user:
+
 |I want to.. | So that I can.. | Acceptance Criteria
 | ----------- | ----------- | ----------- |
 | Create an account | Store my personal recipes | 1: user can create account  2: user can log in  AC 3: user can log out
 | Browse through recipes | Find some new meals ideas | 1: Admin created recipes are available to all users 2: Non logged in users can view admin created recipes 3: Non-logged in users have read only access |
 
+
 As a logged in user:
+
 |I want to.. | So that I can.. | Acceptance Criteria
 | ----------- | ----------- | ----------- |
 | Create an account | Store my personal recipes | 1: user can create account 2: user can log in 3: user can log out  |
@@ -79,7 +82,9 @@ As a logged in user:
 | Search my recipes | To quickly find the recipe I want  |  1: Search bar in navigation 2: search bar functionality added 3: Have a variety of parameters to search with |
 | Add recipes to favourites | View my favourite recipes easily |  1: Create add favourite button 2: Apply to user or admin recipes 3: Display these on their own page 4: Have indicator on recipe to skow if favourite or not |
 
+
 Out of scope for this release:
+
 |I want to.. | So that I can.. | Acceptance Criteria
 | ----------- | ----------- | ----------- |
 | Share recipes I have created | family and friends can view them  |  1: Share by email 2: Share read only with other users |
@@ -87,6 +92,10 @@ Out of scope for this release:
 | Prevent my device going into sleep mode on the recipe detail page | Prevent my device going into sleep mode on the recipe detail page | 1: Create button on full_recipe.html for no sleep mode 2: Create functionality for this |
 | Submit my recipe to admin to be available for all users | Share this recipe with everyone on the site | 1: Be able to submit admin recipe request 2: Admin can approve and submit to general site |
 
+
+## Design Choices
+###  Colours
+### Typography
 Colour Pallete:
 
 ![image](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/027c781a-346b-4ed8-93ed-9a42815c0f0f)
@@ -94,6 +103,135 @@ Colour Pallete:
 Logo:
 ![image](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ea618f02-99f6-4947-a764-8ffe40bb4155)
 
+## Workflow
+### Agile Methodology
+Github Projects
+### Diagram I made
+### ER Diagram
+
+## Design
+### Wireframes
+### Features
+### Walkthough of site including screenshots of every page
+
+### Future Features
+
+## Testing
+### Validation Testing
+**HTML**
+
+**CSS**
+
+**PYTHON**
+
+** Lighthouse
+
+
+### Manual Testing
+| `Feature` | `Expected Outcome` | `Testing Performance` | `Result` | `Pass/Fail`|
+| ----------|--------------------|-----------------------|----------|------------|
+| `Navbar` |  |
+| Logo  | When clicked user will be able to be redirected to the Home Page. | Clicked on logo | Redirected to the Home Page  | Pass |
+| Home link | When clicked user will be able to be redirected to the Home Page. | Clicked on Home  | Redirected to the Home Page | Pass |
+| Menu link | When clicked user will be able to be redirected to the Menu Page. | Clicked on Menu  | Redirected to the Menu Page | Pass |
+| Register link | When clicked user will be able to be redirected to the Sign Up Page. | Clicked on Register  | Redirected to the Sign Up Page | Pass |
+| Login link | When clicked user will be able redirected to the Sign In Page. | Clicked on Login  | Redirected to the Sign In Page | Pass |
+| Booking Details | When clicked user will be able redirected to the Booking Details Page. | Clicked on Booking Details  | Redirected to the Booking Details Page | Pass |
+| `Header`  | |
+| "Book Now!/Register To Book A Table!" Button    | When clicked the user will be redirected to the Booking/Sign Up Page  | Clicked Button  |  Redirected to the Booking/Sign Up Page  | Pass |
+| `Sign Up Form` |
+| Sign In link | Redirected to sign in page | Clicked | Redirected to sign in page  | Pass |
+| Taken Username | Sign up is unsuccessful | Entered a taken username | Sign up was unsuccessful  | Pass |
+| Taken Email | Sign up is unsuccessful | Entered a taken Email | Sign up was unsuccessful  | Pass |
+| Email without @ | Sign up is unsuccessful | Entered an Email without @ | Sign up was unsuccessful  | Pass |
+| Password that's similar to username/email | Sign up is unsuccessful | Entered a password that's similar to username/email| Sign up was unsuccessful  | Pass |
+| Password with less than 8 characters | Sign up is unsuccessful | Entered a password with less than 8 characters | Sign up was unsuccessful  | Pass |
+| Commonly used password | Sign up is unsuccessful | Entered a commonly used password | Sign up was unsuccessful  | Pass |
+| Numbers only password | Sign up is unsuccessful | Entered a numbers only password | Sign up was unsuccessful  | Pass |
+| Valid Sign Up Form | Sign up is successful | Entered a valid sign up form | Sign up was successful  | Pass |
+| `Sign In Form` |
+| Sign Up link | Redirected to sign up page | Clicked | Redirected to sign up page  | Pass |
+| Incorrect username | Sign in is unsuccessful | Entered a incorrect username | Sign in was unsuccessful  | Pass |
+| Incorrect password | Sign in is unsuccessful | Entered a incorrect password | Sign in was unsuccessful  | Pass |
+| Correct username & password | Sign in is successful | Entered a correct username & password | Sign in was successful  | Pass |
+| Remember Me | Stayed logged in next time I enter site | Re-entered site | Still signed in  | Pass |
+| `Sign Out Page` |
+| Sign Out Button | Signed Out | Clicked Sign Out Button | Was signed out  | Pass |
+| `Booking Form` |
+| Past Date Submitted | Booking is unsuccessful | Entered a past date | Booking was unsuccessful  | Pass |
+| Booking for an already booked time of the same user. | Booking is unsuccessful | Entered an already booked time | Booking was unsuccessful  | Pass |
+| Valid Form | Get a booking confirmation | Entered a valid form | Got a confirmation of my booking  | Pass |
+| `Booking Details Page` |
+| Cancel Booking Button | Be able to confirm if I want to cancel booking | Clicked | Able to confirm if I want to cancel booking | Pass |
+| Update Booking Button | Be able to update booking | Clicked | Able to update booking | Pass |
+| `Update Booking` |
+| Update Booking Form | Be able to update booking | Entered valid form | Able to update booking | Pass |
+| `Cancel Booking` |
+| Cancel Booking | Booking is canceled | Clicked confirm button | Booking was canceled | Pass |
+| `Cancel Other User Booking` |
+| Enter other user cancel booking url | Redirected to the 404 page | Enter url | Redirected to the 404 page | Pass |
+| `Update Other User Booking` |
+| Enter other user update booking url | Redirected to 404 the page | Enter url | Redirected to hte 404 page | Pass |
+| `Footer` |
+| Facebook Link | Redirected to Facebook page | Clicked | Redirected to Facebook page | Pass |
+| Twitter Link | Redirected to Twitter page | Clicked | Redirected to Twitter page | Pass |
+| Instagram Link | Redirected to Instagram page | Clicked | Redirected to Instagram page | Pass |
+| YouTube Link | Redirected to YouTube page | Clicked | Redirected to YouTube page | Pass |
+
+## Bugs
+
+## Technologies Used
+CSS, Django, HTML, JS, Python
+ElephantSQL Database
+
+Deployment
+To deploy the project to Heroku, I followed these steps:
+#### **Creating Heroku App:**
++ Logged into Heroku.
++ Selected 'Create New App' from the dashboard.
++ Chose a unique app name.
++ Selected region based on the location.
++ Clicked 'Create App'.
+
+#### **Connecting to GitHub:**
++ From the Heroku dashboard, navigated to the 'Deploy' tab.
++ Under 'Deployment Method', chose 'GitHub'.
++ Searched and selected the repository by name.
++ Clicked 'Connect'.
+
+#### **Setting Environment Variables:**
++ Went to the 'Settings' tab.
++ Located 'Config Vars' and clicked 'Reveal Config Vars'.
++ Added the necessary variables.
+
+#### **Manual Deployment:**
++ Went back to the 'Deploy' tab.
++ Located 'Manual deploy' at the bottom of the page.
++ Clicked 'Deploy Branch' and waited for the build to finish.
+
+#### **Accessing the App:**
++ After the deployment was successful, I found and clicked 'Open app' at the top of the app dashboard.
+
+These steps ensured that the project was successfully deployed to Heroku.
+The live link can be found here - [Samburger Website](https://project-portfolio-4-sam-335106eed664.herokuapp.com)
+
 Credits
+
+# Credits
+## Code Used/Inspired
+ * [CreateView](https://www.geeksforgeeks.org/createview-class-based-views-django/?ref=lbp)
+ * [ListView](https://www.geeksforgeeks.org/listview-class-based-views-django/)
+ * [UpdateView](https://www.geeksforgeeks.org/updateview-class-based-views-django/)
+ * [DeleteView](https://www.geeksforgeeks.org/deleteview-class-based-views-django/)
+ * [404 & 500 pages](https://stackoverflow.com/questions/17662928/django-creating-a-custom-500-404-error-page)
+ * [Avoid past booking dates](https://stackoverflow.com/questions/70671189/avoid-booking-past-dates-with-django)
+ * [Unique Together](https://docs.djangoproject.com/en/4.2/ref/models/options/)
+ * [Avoid past booking dates](https://stackoverflow.com/questions/70671189/avoid-booking-past-dates-with-django)
+
+## Media
+* Landing Page image from [Pexels](https://images.pexels.com/photos/1199960/pexels-photo-1199960.jpeg)
+* Booking Page image from [Pexels](https://images.pexels.com/photos/1484516/pexels-photo-1484516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+* [Favicon](https://www.flaticon.com/free-icon/hamburger_106277)
+* [Favicon Generator](https://realfavicongenerator.net)
 Persona generated by chatgpt
 
