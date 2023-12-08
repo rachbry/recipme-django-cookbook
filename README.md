@@ -190,7 +190,8 @@ The result is a carefully chosen color palette that enhances the design without 
 I created a logo on Canva using Josefin Sans, and used this for the headers and titles in my website for continuity of design.  While Josefin Sans has a geometric feel I paired this with Lato for a modern, clean appearance.  This pairing ensures readability, making text clear and easy to read. The fonts are versatile, suitable for various contexts like web and print designs. Despite their unique characteristics, they maintain consistency in proportions and weights, contributing to a cohesive and professional look. The combination strikes a balance, creating an aesthetically pleasing design that blends the vintage charm of Josefin Sans with the clean modernity of Lato.
 
 
-### Walkthough of site including screenshots of every page
+## Walkthough of site including screenshots of every page
+
 
 ### Future Features
 Future features not implemented at this time include:
@@ -198,6 +199,7 @@ Future features not implemented at this time include:
 - Recipe sharing - To be able to share recipes with other users of the site or to email them to others
 - Upload recipes to main site - The ability to request admin approval for a recipe to be added to the site wide collection
 - Notes - the ability for a user to leave notes on their recipes outlining any tweaks they may have made
+
 
 ## Testing
 
@@ -213,127 +215,50 @@ This website has been tested and is fully responsive on Desktop, Mac book, Ipad 
 | ![IMG_0144](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/62afc582-cedd-4e03-802c-9afeeb5f1c8d)                             | ![IMG_0143](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ae16c7b3-08dc-4077-8fe7-b314cd527072)                             |
 
 
+## Browser Compatibility
 
-
-
-**In the My_project Directory:**
-
-
-
-- urls.py:
- 
-![Screenshot 2023-12-07 at 18 19 56](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/765148bc-e8ad-4659-9c85-0d61a5508012)
-
-- settings.py:
-  
-![Screenshot 2023-12-07 at 18 26 08](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/a31948da-dec9-472c-ad27-b757460da4ec)
-
-
-**In the Home App:**
-
-
-- urls.py
-  
-![Screenshot 2023-12-07 at 18 15 51](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/f49faa61-b794-40cd-8e3d-cc2fb1ccbf65)
-
-- views.py
-  
-![Screenshot 2023-12-07 at 18 04 27](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/1e5b9425-e441-4fc5-bd9d-afc0d005e81a)
-
-
-
-**In the Recipes App:**
-
-
-- admin.py
-  
-![Screenshot 2023-12-07 at 18 12 48](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ef6e7e04-9cab-422f-be0a-96299043c171)
-
-- forms.py
-  
-![Screenshot 2023-12-07 at 18 05 43](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/a1806f45-df34-42f2-b8ec-7727aa0d7d4e)
-
-- models.py
-
-![Screenshot 2023-12-07 at 18 02 20](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ea779dea-51dc-4603-9dd6-8b37cb07907b)
-
-- urls.py
-  
-![Screenshot 2023-12-07 at 18 01 26](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/7df29fff-2cf3-4129-b52a-a7b5670677b4)
-
-- views.py
-             
-![Screenshot 2023-12-07 at 17 59 58](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/52dc1537-b18e-4219-97f4-aa38e1591b36)
-
-
-**Lighthouse**
-
-I used Lighthouse to check the quality of my web pages.  Some results are shown below:
-
--logged in home page Desktop
-
-![Screenshot 2023-12-07 at 19 59 20](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/6a7d8cf9-b181-494a-a7c1-4373a9284876)
-
-- logged in home page Desktop
-  
-![Screenshot 2023-12-07 at 20 03 49](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/da30f0b4-ed88-4a2a-bf9e-fb33dace8cfe)
-
+The website has been tested and is being displayed as expected on Safari, Google Chrome and Firefox as well as on android and apple devices.
 
 
 ## Bugs
 
+The only feature not currently working is the 'forgot your password' link, email authentication was out of scope for this project.
+
+
 ## Technologies Used
-CSS, Django, HTML, JS, Python
-ElephantSQL Database
+- CSS
+- Django
+- HTML
+- Bootstrap
+- Python
+- ElephantSQL Postgres Database
 
-Deployment
-To deploy the project to Heroku, I followed these steps:
-#### **Creating Heroku App:**
-+ Logged into Heroku.
-+ Selected 'Create New App' from the dashboard.
-+ Chose a unique app name.
-+ Selected region based on the location.
-+ Clicked 'Create App'.
+- GitPod development environment used
+- GitHub used for version control and code hosting
+- GitHub Projects used for Agile Methodology
 
-#### **Connecting to GitHub:**
-+ From the Heroku dashboard, navigated to the 'Deploy' tab.
-+ Under 'Deployment Method', chose 'GitHub'.
-+ Searched and selected the repository by name.
-+ Clicked 'Connect'.
+## Deployment
+- I followed the following screenshot to deploy my project to Heroku:
 
-#### **Setting Environment Variables:**
-+ Went to the 'Settings' tab.
-+ Located 'Config Vars' and clicked 'Reveal Config Vars'.
-+ Added the necessary variables.
+![image (2)](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/26d212cb-0a51-4bb3-8485-d2fb189eebdc)
 
-#### **Manual Deployment:**
-+ Went back to the 'Deploy' tab.
-+ Located 'Manual deploy' at the bottom of the page.
-+ Clicked 'Deploy Branch' and waited for the build to finish.
-
-#### **Accessing the App:**
-+ After the deployment was successful, I found and clicked 'Open app' at the top of the app dashboard.
-
-These steps ensured that the project was successfully deployed to Heroku.
-The live link can be found here - [Samburger Website](https://project-portfolio-4-sam-335106eed664.herokuapp.com)
-
-Credits
 
 # Credits
-## Code Used/Inspired
- * [CreateView](https://www.geeksforgeeks.org/createview-class-based-views-django/?ref=lbp)
- * [ListView](https://www.geeksforgeeks.org/listview-class-based-views-django/)
- * [UpdateView](https://www.geeksforgeeks.org/updateview-class-based-views-django/)
- * [DeleteView](https://www.geeksforgeeks.org/deleteview-class-based-views-django/)
- * [404 & 500 pages](https://stackoverflow.com/questions/17662928/django-creating-a-custom-500-404-error-page)
- * [Avoid past booking dates](https://stackoverflow.com/questions/70671189/avoid-booking-past-dates-with-django)
- * [Unique Together](https://docs.djangoproject.com/en/4.2/ref/models/options/)
- * [Avoid past booking dates](https://stackoverflow.com/questions/70671189/avoid-booking-past-dates-with-django)
 
-## Media
-* Landing Page image from [Pexels](https://images.pexels.com/photos/1199960/pexels-photo-1199960.jpeg)
-* Booking Page image from [Pexels](https://images.pexels.com/photos/1484516/pexels-photo-1484516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
-* [Favicon](https://www.flaticon.com/free-icon/hamburger_106277)
-* [Favicon Generator](https://realfavicongenerator.net)
-Persona generated by chatgpt
+- The Structure of my website was based around this tutorial with Dee Mc:
+https://youtu.be/JzDBCZTgVyw?si=w3BBwJswUjBTm1xw 
+- This tutorial was used to assist in the creation of my favourite button:
+https://www.youtube.com/watch?v=H4QPHLmsZMU
+- ChatGPT was used for troubleshooting, bug fixing and content generating.  Also used to create my persona.
+- Thanks to Stacey Robson for the Heroku deployment guide
+- Thanks to the other members of the Bootcamp for their technical and moral support
+- Recipes used were from the bbc good food website
+  
+- Fontawesome was used for icons
+- Google fonts was used
+- Wireframes created in Balsamiq
+- Logo and flow chart created in Canva
+ 
+
+
 
