@@ -4,7 +4,7 @@
 
 Are you tired of looking through recipe books, sifting through notes, scrolling through blog posts or bookmarks trying to find the recipe that you know you have somewhere? 
 
-Welcome to RecipMe, a place where you can easily store, retrieve and edit your favourite recipes all in one place.  This website if for anyone who loves to cook but doesn’t love wasting valuable cooking time searching for their favourite recipes. 
+Welcome to RecipMe, a place where you can easily store, retrieve and edit your favourite recipes all in one place.  This website is for anyone who loves to cook but doesn’t love wasting valuable cooking time searching for their favourite recipes. 
 
 ![Screenshot 2023-12-07 at 11 04 34](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/e891dd76-414b-40aa-89f0-7e343ef8a5fa)
 
@@ -12,7 +12,7 @@ Welcome to RecipMe, a place where you can easily store, retrieve and edit your f
 
 From the latest trends to secret family recipes, the simple interface and navigation within RecipMe enables you to not only input your recipes but to edit, tweak or customise them with ease.  Our search functionality ensures these are all easily accessible. 
 
-Browse through our own recipes for inspiration and them to your collection.
+Browse through our own recipes for inspiration and add them to your collection.
 
 RecipMe is accessible on all devices, meaning whether you are at home, cooking with others or in the supermarket, you can access your recipes anywhere, anytime.   
 
