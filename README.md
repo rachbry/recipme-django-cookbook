@@ -267,6 +267,7 @@ The website has been tested and is being displayed as expected on Safari, Google
 - Bootstrap
 - Python
 - ElephantSQL Postgres Database
+- Cloudinary - All user submitted recipe photos are uploaded to cloudinary
 
 - GitPod development environment used
 - GitHub used for version control and code hosting
@@ -288,7 +289,7 @@ https://www.youtube.com/watch?v=H4QPHLmsZMU
 - Thanks to Stacey Robson for the Heroku deployment guide
 - Thanks to the other members of the Bootcamp for their technical and moral support
 - Recipes used were from the bbc good food website
-  
+- Hero on image home page retrieved ella-olsson-KPDbRyFOTnE-unsplash.jpg https://images.unsplash.com
 - Fontawesome was used for icons
 - Google fonts was used
 - Wireframes created in Balsamiq
