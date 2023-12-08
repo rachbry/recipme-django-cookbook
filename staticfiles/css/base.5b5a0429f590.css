@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    /* Fonts */
+    --main-font: 'Lato', sans-serif;
+    --title: 'Josefin Sans', sans-serif;
+    
+    /* Colours */
+    --grey: #545454;
+    --light-grey: #8b8787;
+    --off-white: #f5f4f3;
+    --white: #fff;
+    --yellow: #ffbd59;
+    --dark: #253439;
+    --coral: #ff5757;
+
+    /* Utils */
+    --small-box-shadow: 1px -1px 9px 0 #00000061;
+    --border: 1px solid var(--grey);
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--main-font);
+    color: var(--dark);
+    background-color: var(--off-white);
+}
+
+h1, h2, h3, h4, h5, h6, .special-text {
+    font-family: var(--title);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    color: var(--grey);
+}
+
+main {
+    flex: 1;
+    background-color: var(--white);
+}
+
+.overflow-auto {
+    overflow-x: auto;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.mute {
+    color: var(--light-grey);
+    font-style: italic;
+    letter-spacing: 0.05rem;
+}
+
+.justify-text {
+    text-align: justify;
+}
+
+.left-text {
+    text-align: left;
+}
+
+/* buttons */
+.button-action {
+    background-color: var(--off-white);
+    border-color: var(--coral);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--coral);
+}
+
+.button-action:hover {
+    background-color: var(--coral);
+    text-transform: uppercase;
+    letter-spacing: 0.06rem;
+    color: var(--off-white);
+}
+
+/* Homepage */
+.jumbotron-container {
+    background-image: url("https://res.cloudinary.com/de9lbkrcb/image/upload/v1701525668/ella-olsson-KPDbRyFOTnE-unsplash_ocpm5z.jpg");
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: overlay;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+
+.button-hero {
+	border-radius:6px;
+	border:1px solid var(--yellow);
+	display:inline-block;
+	cursor:pointer;
+	padding:16px 31px;
+	text-decoration:none;
+    color: var(--dark);
+    background-color: var(--yellow);
+}
+
+.jumbotron .button-hero:hover {
+	color:var(--yellow);
+    background-color: var(--dark);
+    border:1px solid var(--dark);
+    text-decoration: none;
+}
+
+.button-hero h3 {
+    color: var(--yellow);
+}
+
+#hero-text {
+    color: var(--off-white);
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    background-color: var(--coral);
+    padding: 1rem;
+}
+
+.social-icon {
+    height: 2rem;
+    margin: 1rem;
+    color: var(--off-white);
+}
+
+footer .special-text {
+    color: var(--off-white);
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+/* Header */
+.navbar {
+    background-color: var(--coral);
+    box-shadow: var(--small-box-shadow);
+    padding: 1rem;
+    display: flex;
+    font-family:'Josefin Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.125rem;
+    align-items: center;
+}
+
+a.navbar-brand {
+    margin-right: 1rem;
+}
+
+.navbar .navbar-toggler-icon {
+    border-color: var(--white);
+    border-width: 4px;
+}
+
+.navbar a.nav-link {
+    margin-right: 1rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--white);
+}
+
+.nav-logo {
+    height: 80px;
+    width: auto;
+}
+
+.active {
+    border-bottom: 2px solid var(--dark);
+}
+
+.navbar li {
+    font-size: 1rem;
+}
+
+.input-group-append .button-action {
+    font-size: 0.6rem;
+}
+
+.input-group-append .button-action {
+    font-size: 0.6rem;
+}
+
+/* form */
+.form {
+    width: 100%;
+    margin: 3% auto;
+    border-radius: 10px;
+}
+
+/* password restriction text on sign up page */
+#hint_id_password1 {
+    text-align: left;
+}
+
+/* Recipe Cards */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-overlay-icon {
+    font-size: 2rem;
+    margin: 10px;
+    text-shadow: 0 0 5px var(--grey);
+}
+
+/* Recipes page */
+.recipes {
+    text-decoration: none;
+}
+
+.recipes:hover {
+    cursor: pointer;
+}
+
+.recipe-card {
+    width: 18rem;
+    height: 90%;
+    margin-top: 1rem;
+}
+
+.control {
+    font-size: 1rem;
+    color: var(--coral);
+}
+
+.control:hover {
+    font-size: 1.5rem;
+    color: var(--coral);
+    text-decoration: none;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* full recipe page */
+.recipe-pic {
+    max-height: 250px;
+}
+
+.description-container {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.description-container.expanded {
+    -webkit-line-clamp: unset;
+}
+
+.read-more-button {
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--coral);
+}
+
+.card-recipe-info .card-body {
+    background-color: var(--white);
+    box-shadow: var(--small-box-shadow);
+    padding: 2rem;
+}
+
+.card-recipe-info li {
+    margin-bottom: 1rem;
+}
+
+.post-it-note {
+    background-color: var(--yellow);
+    box-shadow: var(--small-box-shadow);
+}
+
+.freeze {
+    color: #90D2FA;
+    font-size: 1.5rem;
+    width: auto;
+    padding-top: 5px;
+}
+
+.icon-buttons {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.icon-favourite {
+    color: var(--yellow);
+}
+
+.icon-delete {
+    color: red;   
+}
+
+.icon-edit {
+    color: var(--grey);   
+}
+
+.recipe-page-buttons {
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
+.icon-text {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.recipe-card-title {
+    text-align: center;
+    font: var(--main-font);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+h2 .recipe-card:hover .recipe-card-title {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
