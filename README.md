@@ -190,7 +190,42 @@ The result is a carefully chosen color palette that enhances the design without 
 I created a logo on Canva using Josefin Sans, and used this for the headers and titles in my website for continuity of design.  While Josefin Sans has a geometric feel I paired this with Lato for a modern, clean appearance.  This pairing ensures readability, making text clear and easy to read. The fonts are versatile, suitable for various contexts like web and print designs. Despite their unique characteristics, they maintain consistency in proportions and weights, contributing to a cohesive and professional look. The combination strikes a balance, creating an aesthetically pleasing design that blends the vintage charm of Josefin Sans with the clean modernity of Lato.
 
 
-## Walkthough of site including screenshots of every page
+
+## RecipMe
+
+### Homepage
+
+![Screenshot 2023-12-08 at 12 03 20](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/7abfbfb0-59bd-4442-b208-c1ee634a79dd)
+
+
+### Sign In
+
+![Screenshot 2023-12-08 at 12 09 17](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ffcb1ee2-5192-4d04-8a76-0dd7d61798ea)
+
+
+### Add / Edit Pages
+
+![Screenshot 2023-12-08 at 12 20 19](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/62545a43-e46b-41b8-95e3-9edece069e07)
+
+
+### RecipMe, Favourites
+
+![Screenshot 2023-12-08 at 12 30 57](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/af2e5cb7-a489-4239-96bb-fbb5e76963b4)
+
+
+![Screenshot 2023-12-08 at 12 35 16](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/6fdb2dd1-56c0-4c7f-9388-f22b00e5368b)
+
+
+###  personalised home page 
+
+![Screenshot 2023-12-08 at 12 40 17](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/2049f4cc-a85e-4ed7-9010-0197f17aac23)
+
+
+### Full Recipe page
+
+![Screenshot 2023-12-08 at 12 46 15](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/9e79d26c-09d0-43ac-96e4-cc291166ec50)
+
+
 
 
 ### Future Features
@@ -221,7 +256,7 @@ The website has been tested and is being displayed as expected on Safari, Google
 
 
 ## Bugs
-
+On the edit recipe page there is no success message appearing.  It does reload the page if successful and return to the top of page
 The only feature not currently working is the 'forgot your password' link, email authentication was out of scope for this project.
 
 
