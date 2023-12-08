@@ -8,6 +8,9 @@ Welcome to RecipMe, a place where you can easily store, retrieve and edit your f
 
 ![Screenshot 2023-12-07 at 11 04 34](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/e891dd76-414b-40aa-89f0-7e343ef8a5fa)
 
+
+[Link to RecipMe website](https://recip-me-deee77afa86d.herokuapp.com/)
+
 ## Why choose RecipMe? 
 
 From the latest trends to secret family recipes, the simple interface and navigation within RecipMe enables you to not only input your recipes but to edit, tweak or customise them with ease.  Our search functionality ensures these are all easily accessible. 
