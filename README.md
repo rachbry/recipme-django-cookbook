@@ -12,7 +12,7 @@ Welcome to RecipMe, a place where you can easily store, retrieve and edit your f
 
 From the latest trends to secret family recipes, the simple interface and navigation within RecipMe enables you to not only input your recipes but to edit, tweak or customise them with ease.  Our search functionality ensures these are all easily accessible. 
 
-Browse through our own recipes for inspiration and to your collection.
+Browse through our own recipes for inspiration and them to your collection.
 
 RecipMe is accessible on all devices, meaning whether you are at home, cooking with others or in the supermarket, you can access your recipes anywhere, anytime.   
 
@@ -216,12 +216,12 @@ I created a logo on Canva using Josefin Sans, and used this for the headers and 
 ![Screenshot 2023-12-08 at 12 35 16](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/6fdb2dd1-56c0-4c7f-9388-f22b00e5368b)
 
 
-###  personalised home page 
+###  Personalised Home Page 
 
 ![Screenshot 2023-12-08 at 12 40 17](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/2049f4cc-a85e-4ed7-9010-0197f17aac23)
 
 
-### Full Recipe page
+### Full Recipe Page
 
 ![Screenshot 2023-12-08 at 12 46 15](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/9e79d26c-09d0-43ac-96e4-cc291166ec50)
 
@@ -244,20 +244,20 @@ Results of manual testing:
 ## Responsiveness
 This website has been tested and is fully responsive on Desktop, Mac book, Ipad and mobile devices.
 
-| Screenshots                                                                                                                                      | Ipad and Iphone SE                                                                                                                               |
-|--------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| ![53d76d73-ebe8-46ee-9860-8137adc34f04](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/18cdc571-d3ce-4f13-972f-9b7e98cd6936) | ![53d76d73-ebe8-46ee-9860-8137adc34f04](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/a4671553-5094-4ed8-976e-f324c91de93d) |
-| ![IMG_0144](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/62afc582-cedd-4e03-802c-9afeeb5f1c8d)                             | ![IMG_0143](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ae16c7b3-08dc-4077-8fe7-b314cd527072)                             |
-
+                                      
 
 ## Browser Compatibility
 
 The website has been tested and is being displayed as expected on Safari, Google Chrome and Firefox as well as on android and apple devices.
 
+| Screenshots                                                                                                                                      | Ipad and Iphone SE                                                                                                   |
+|--------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| ![53d76d73-ebe8-46ee-9860-8137adc34f04](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/18cdc571-d3ce-4f13-972f-9b7e98cd6936) | ![ipad](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/6124121e-03e9-4085-9200-746d3aa4812c)     |
+| ![IMG_0144](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/62afc582-cedd-4e03-802c-9afeeb5f1c8d)                             | ![IMG_0143](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ae16c7b3-08dc-4077-8fe7-b314cd527072) |
 
 ## Bugs
-On the edit recipe page there is no success message appearing.  It does reload the page if successful and return to the top of page
-The only feature not currently working is the 'forgot your password' link, email authentication was out of scope for this project.
+- On the edit recipe page there is no success message appearing.  It does reload the page if successful and return to the top of page
+- The only feature not currently working is the 'forgot your password' link, email authentication was out of scope for this project.
 
 
 ## Technologies Used
