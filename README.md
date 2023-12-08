@@ -12,7 +12,7 @@ Welcome to RecipMe, a place where you can easily store, retrieve and edit your f
 
 From the latest trends to secret family recipes, the simple interface and navigation within RecipMe enables you to not only input your recipes but to edit, tweak or customise them with ease.  Our search functionality ensures these are all easily accessible. 
 
-Browse through our own recipes for inspiration and to your collection.
+Browse through our own recipes for inspiration and them to your collection.
 
 RecipMe is accessible on all devices, meaning whether you are at home, cooking with others or in the supermarket, you can access your recipes anywhere, anytime.   
 
@@ -101,10 +101,13 @@ For this project I adopted an Agile methodology.  This is the first time I have 
 - Enabled me to adjust my expectations and still produce the required MVP
 
 I created a site map and workflow diagram:
+
 ![Screenshot 2023-12-07 at 14 12 33](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/c5ed706d-1b01-4a22-8e40-6e4ff5511e61)
 
 I used Github projects to convert my user stories into actionable tasks.  The acceptance criteria was very helpful to ensure all necessary tasks were completed.
+
 ![Screenshot 2023-12-07 at 14 17 28](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/3e491c10-88c9-4477-96e9-c529f37d60bc)
+
 
 ### Models
 In RecipMe I used the Django AllAuth User Model and created a custom Recipe Model.  This included the following fields:
@@ -151,10 +154,12 @@ They will have a personalised home page with all their recipes on it and will be
 ![Screenshot 2023-12-07 at 13 33 50](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/f688c986-8040-48cb-938a-64b20b189f72)
 
 
+
 **The Full Recipe Page:**
 Will contain all the relevent information for each recipe.  Design will ensure all ingredients and instructions are available on one screen for desktop and tablet.
 
 ![Screenshot 2023-12-07 at 13 36 14](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/3e8edc07-582b-41de-8cd6-6ce59475f3be)
+
 
 
 **Add / Edit Recipe Page:**
@@ -162,177 +167,133 @@ Front End CRUD will be available to add / edit recipes for logged in users.  The
 
 ![Screenshot 2023-12-07 at 13 42 11](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/42943578-41c6-4061-b0e4-e9debaa239bd)
 
+
 ## Design Choices
 ###  Colours
-### Typography
-Colour Pallete:
+
+I used [coolors.co] (https://coolors.co/palette/253439-ff5757-545454-ffbd59-f5f4f3) to generate my colour palette:
 
 ![image](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/027c781a-346b-4ed8-93ed-9a42815c0f0f)
 
-Logo:
+I aimed for a clean and simple website design that keeps the focus on the content. Opting for a vibrant colour scheme, I wanted to strike a balance between minimalism and boldness. The light off-white background (#f5f4f3) keeps things simple and clean, while introducing splashes of colour add a touch of visual interest that contrasts against the neutral backdrop. This combination creates a modern look without being too over the top.
+
+Coral and yellow form a complementary pairing, and their warmth complemented by cool grey tones, ensures a visually cohesive and balanced palette.  The neutral colours help maintain an overall sense of harmony.
+
+The result is a carefully chosen color palette that enhances the design without overwhelming it, adding sophistication and vibrancy.
+
+### Branding
+
 ![image](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ea618f02-99f6-4947-a764-8ffe40bb4155)
-### Walkthough of site including screenshots of every page
+
+### Typography
+
+I created a logo on Canva using Josefin Sans, and used this for the headers and titles in my website for continuity of design.  While Josefin Sans has a geometric feel I paired this with Lato for a modern, clean appearance.  This pairing ensures readability, making text clear and easy to read. The fonts are versatile, suitable for various contexts like web and print designs. Despite their unique characteristics, they maintain consistency in proportions and weights, contributing to a cohesive and professional look. The combination strikes a balance, creating an aesthetically pleasing design that blends the vintage charm of Josefin Sans with the clean modernity of Lato.
+
+
+
+## RecipMe
+
+### Homepage
+
+![Screenshot 2023-12-08 at 12 03 20](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/7abfbfb0-59bd-4442-b208-c1ee634a79dd)
+
+
+### Sign In
+
+![Screenshot 2023-12-08 at 12 09 17](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ffcb1ee2-5192-4d04-8a76-0dd7d61798ea)
+
+
+### Add / Edit Pages
+
+![Screenshot 2023-12-08 at 12 20 19](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/62545a43-e46b-41b8-95e3-9edece069e07)
+
+
+### RecipMe, Favourites
+
+![Screenshot 2023-12-08 at 12 30 57](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/af2e5cb7-a489-4239-96bb-fbb5e76963b4)
+
+
+![Screenshot 2023-12-08 at 12 35 16](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/6fdb2dd1-56c0-4c7f-9388-f22b00e5368b)
+
+
+###  Personalised Home Page 
+
+![Screenshot 2023-12-08 at 12 40 17](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/2049f4cc-a85e-4ed7-9010-0197f17aac23)
+
+
+### Full Recipe Page
+
+![Screenshot 2023-12-08 at 12 46 15](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/9e79d26c-09d0-43ac-96e4-cc291166ec50)
+
+
+
 
 ### Future Features
 Future features not implemented at this time include:
 - The ability on the full recipe page to toggle on/off dark mode and prevent your screen turning off, a feature I feel would be very useful when following a recipe
 - Recipe sharing - To be able to share recipes with other users of the site or to email them to others
 - Upload recipes to main site - The ability to request admin approval for a recipe to be added to the site wide collection
+- Notes - the ability for a user to leave notes on their recipes outlining any tweaks they may have made
+
 
 ## Testing
-### Validation Testing
-**HTML**
-![Screenshot 2023-12-07 at 14 48 21](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/730b9424-7689-43d1-8799-e969fa50de64)
 
+Results of manual testing:
+[Testing](testing.md)
 
-**CSS**
+## Responsiveness
+This website has been tested and is fully responsive on Desktop, Mac book, Ipad and mobile devices.
 
-**PYTHON**
-I used the CI Python Linter on all my .py files. Please see results below.
+                                      
 
-**In the My_project Directory:**
-- urls.py:
-![Screenshot 2023-12-07 at 18 19 56](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/765148bc-e8ad-4659-9c85-0d61a5508012)
+## Browser Compatibility
 
-- settings.py:
-![Screenshot 2023-12-07 at 18 26 08](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/a31948da-dec9-472c-ad27-b757460da4ec)
+The website has been tested and is being displayed as expected on Safari, Google Chrome and Firefox as well as on android and apple devices.
 
-
-**In the Home App:**
-
-- urls.py
-![Screenshot 2023-12-07 at 18 15 51](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/f49faa61-b794-40cd-8e3d-cc2fb1ccbf65)
-
-- views.py
-![Screenshot 2023-12-07 at 18 04 27](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/1e5b9425-e441-4fc5-bd9d-afc0d005e81a)
-
-
-**In the Recipes App:**
-
-- admin.py
-![Screenshot 2023-12-07 at 18 12 48](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ef6e7e04-9cab-422f-be0a-96299043c171)
-
-- forms.py
-![Screenshot 2023-12-07 at 18 05 43](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/a1806f45-df34-42f2-b8ec-7727aa0d7d4e)
-
-- models.py 
-![Screenshot 2023-12-07 at 18 02 20](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ea779dea-51dc-4603-9dd6-8b37cb07907b)
-
-- urls.py
-![Screenshot 2023-12-07 at 18 01 26](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/7df29fff-2cf3-4129-b52a-a7b5670677b4)
-
-- views.py               
-![Screenshot 2023-12-07 at 17 59 58](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/52dc1537-b18e-4219-97f4-aa38e1591b36)
-
-
-** Lighthouse
-
-
-### Manual Testing
-| `Feature` | `Expected Outcome` | `Testing Performance` | `Result` | `Pass/Fail`|
-| ----------|--------------------|-----------------------|----------|------------|
-| `Navbar` |  |
-| Logo  | When clicked user will be able to be redirected to the Home Page. | Clicked on logo | Redirected to the Home Page  | Pass |
-| Home link | When clicked user will be able to be redirected to the Home Page. | Clicked on Home  | Redirected to the Home Page | Pass |
-| Menu link | When clicked user will be able to be redirected to the Menu Page. | Clicked on Menu  | Redirected to the Menu Page | Pass |
-| Register link | When clicked user will be able to be redirected to the Sign Up Page. | Clicked on Register  | Redirected to the Sign Up Page | Pass |
-| Login link | When clicked user will be able redirected to the Sign In Page. | Clicked on Login  | Redirected to the Sign In Page | Pass |
-| Booking Details | When clicked user will be able redirected to the Booking Details Page. | Clicked on Booking Details  | Redirected to the Booking Details Page | Pass |
-| `Header`  | |
-| "Book Now!/Register To Book A Table!" Button    | When clicked the user will be redirected to the Booking/Sign Up Page  | Clicked Button  |  Redirected to the Booking/Sign Up Page  | Pass |
-| `Sign Up Form` |
-| Sign In link | Redirected to sign in page | Clicked | Redirected to sign in page  | Pass |
-| Taken Username | Sign up is unsuccessful | Entered a taken username | Sign up was unsuccessful  | Pass |
-| Taken Email | Sign up is unsuccessful | Entered a taken Email | Sign up was unsuccessful  | Pass |
-| Email without @ | Sign up is unsuccessful | Entered an Email without @ | Sign up was unsuccessful  | Pass |
-| Password that's similar to username/email | Sign up is unsuccessful | Entered a password that's similar to username/email| Sign up was unsuccessful  | Pass |
-| Password with less than 8 characters | Sign up is unsuccessful | Entered a password with less than 8 characters | Sign up was unsuccessful  | Pass |
-| Commonly used password | Sign up is unsuccessful | Entered a commonly used password | Sign up was unsuccessful  | Pass |
-| Numbers only password | Sign up is unsuccessful | Entered a numbers only password | Sign up was unsuccessful  | Pass |
-| Valid Sign Up Form | Sign up is successful | Entered a valid sign up form | Sign up was successful  | Pass |
-| `Sign In Form` |
-| Sign Up link | Redirected to sign up page | Clicked | Redirected to sign up page  | Pass |
-| Incorrect username | Sign in is unsuccessful | Entered a incorrect username | Sign in was unsuccessful  | Pass |
-| Incorrect password | Sign in is unsuccessful | Entered a incorrect password | Sign in was unsuccessful  | Pass |
-| Correct username & password | Sign in is successful | Entered a correct username & password | Sign in was successful  | Pass |
-| Remember Me | Stayed logged in next time I enter site | Re-entered site | Still signed in  | Pass |
-| `Sign Out Page` |
-| Sign Out Button | Signed Out | Clicked Sign Out Button | Was signed out  | Pass |
-| `Booking Form` |
-| Past Date Submitted | Booking is unsuccessful | Entered a past date | Booking was unsuccessful  | Pass |
-| Booking for an already booked time of the same user. | Booking is unsuccessful | Entered an already booked time | Booking was unsuccessful  | Pass |
-| Valid Form | Get a booking confirmation | Entered a valid form | Got a confirmation of my booking  | Pass |
-| `Booking Details Page` |
-| Cancel Booking Button | Be able to confirm if I want to cancel booking | Clicked | Able to confirm if I want to cancel booking | Pass |
-| Update Booking Button | Be able to update booking | Clicked | Able to update booking | Pass |
-| `Update Booking` |
-| Update Booking Form | Be able to update booking | Entered valid form | Able to update booking | Pass |
-| `Cancel Booking` |
-| Cancel Booking | Booking is canceled | Clicked confirm button | Booking was canceled | Pass |
-| `Cancel Other User Booking` |
-| Enter other user cancel booking url | Redirected to the 404 page | Enter url | Redirected to the 404 page | Pass |
-| `Update Other User Booking` |
-| Enter other user update booking url | Redirected to 404 the page | Enter url | Redirected to hte 404 page | Pass |
-| `Footer` |
-| Facebook Link | Redirected to Facebook page | Clicked | Redirected to Facebook page | Pass |
-| Twitter Link | Redirected to Twitter page | Clicked | Redirected to Twitter page | Pass |
-| Instagram Link | Redirected to Instagram page | Clicked | Redirected to Instagram page | Pass |
-| YouTube Link | Redirected to YouTube page | Clicked | Redirected to YouTube page | Pass |
+| Screenshots                                                                                                                                      | Ipad and Iphone SE                                                                                                   |
+|--------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| ![53d76d73-ebe8-46ee-9860-8137adc34f04](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/18cdc571-d3ce-4f13-972f-9b7e98cd6936) | ![ipad](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/6124121e-03e9-4085-9200-746d3aa4812c)     |
+| ![IMG_0144](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/62afc582-cedd-4e03-802c-9afeeb5f1c8d)                             | ![IMG_0143](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ae16c7b3-08dc-4077-8fe7-b314cd527072) |
 
 ## Bugs
+- On the edit recipe page there is no success message appearing.  It does reload the page if successful and return to the top of page
+- The only feature not currently working is the 'forgot your password' link, email authentication was out of scope for this project.
+
 
 ## Technologies Used
-CSS, Django, HTML, JS, Python
-ElephantSQL Database
+- CSS
+- Django
+- HTML
+- Bootstrap
+- Python
+- ElephantSQL Postgres Database
 
-Deployment
-To deploy the project to Heroku, I followed these steps:
-#### **Creating Heroku App:**
-+ Logged into Heroku.
-+ Selected 'Create New App' from the dashboard.
-+ Chose a unique app name.
-+ Selected region based on the location.
-+ Clicked 'Create App'.
+- GitPod development environment used
+- GitHub used for version control and code hosting
+- GitHub Projects used for Agile Methodology
 
-#### **Connecting to GitHub:**
-+ From the Heroku dashboard, navigated to the 'Deploy' tab.
-+ Under 'Deployment Method', chose 'GitHub'.
-+ Searched and selected the repository by name.
-+ Clicked 'Connect'.
+## Deployment
+- I followed the following screenshot to deploy my project to Heroku:
 
-#### **Setting Environment Variables:**
-+ Went to the 'Settings' tab.
-+ Located 'Config Vars' and clicked 'Reveal Config Vars'.
-+ Added the necessary variables.
+![image (2)](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/26d212cb-0a51-4bb3-8485-d2fb189eebdc)
 
-#### **Manual Deployment:**
-+ Went back to the 'Deploy' tab.
-+ Located 'Manual deploy' at the bottom of the page.
-+ Clicked 'Deploy Branch' and waited for the build to finish.
-
-#### **Accessing the App:**
-+ After the deployment was successful, I found and clicked 'Open app' at the top of the app dashboard.
-
-These steps ensured that the project was successfully deployed to Heroku.
-The live link can be found here - [Samburger Website](https://project-portfolio-4-sam-335106eed664.herokuapp.com)
-
-Credits
 
 # Credits
-## Code Used/Inspired
- * [CreateView](https://www.geeksforgeeks.org/createview-class-based-views-django/?ref=lbp)
- * [ListView](https://www.geeksforgeeks.org/listview-class-based-views-django/)
- * [UpdateView](https://www.geeksforgeeks.org/updateview-class-based-views-django/)
- * [DeleteView](https://www.geeksforgeeks.org/deleteview-class-based-views-django/)
- * [404 & 500 pages](https://stackoverflow.com/questions/17662928/django-creating-a-custom-500-404-error-page)
- * [Avoid past booking dates](https://stackoverflow.com/questions/70671189/avoid-booking-past-dates-with-django)
- * [Unique Together](https://docs.djangoproject.com/en/4.2/ref/models/options/)
- * [Avoid past booking dates](https://stackoverflow.com/questions/70671189/avoid-booking-past-dates-with-django)
 
-## Media
-* Landing Page image from [Pexels](https://images.pexels.com/photos/1199960/pexels-photo-1199960.jpeg)
-* Booking Page image from [Pexels](https://images.pexels.com/photos/1484516/pexels-photo-1484516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
-* [Favicon](https://www.flaticon.com/free-icon/hamburger_106277)
-* [Favicon Generator](https://realfavicongenerator.net)
-Persona generated by chatgpt
+- The Structure of my website was based around this tutorial with Dee Mc:
+https://youtu.be/JzDBCZTgVyw?si=w3BBwJswUjBTm1xw 
+- This tutorial was used to assist in the creation of my favourite button:
+https://www.youtube.com/watch?v=H4QPHLmsZMU
+- ChatGPT was used for troubleshooting, bug fixing and content generating.  Also used to create my persona.
+- Thanks to Stacey Robson for the Heroku deployment guide
+- Thanks to the other members of the Bootcamp for their technical and moral support
+- Recipes used were from the bbc good food website
+  
+- Fontawesome was used for icons
+- Google fonts was used
+- Wireframes created in Balsamiq
+- Logo and flow chart created in Canva
+ 
+
+
 
